@@ -1,0 +1,5 @@
+<& /vigs_web/header.mas &>
+
+% $m->call_next;
+
+<& /vigs_web/footer.mas &>

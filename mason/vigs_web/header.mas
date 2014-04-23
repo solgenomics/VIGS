@@ -1,0 +1,21 @@
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>SGN-VIGS</title>
+		
+		<link rel="stylesheet" href="/static/js/jqueryui/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/static/css/vigs.css" type="text/css" />
+		
+		<script type="text/javascript" src="/static/js/jquery.js"></script>
+		<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
+		<script type="text/javascript" src="/static/js/jquery/iframe-post-form.js"></script>
+		<script type="text/javascript" src="/static/js/vigs.js"></script>
+		
+	</head>
+	<body>
+		<center>
+			<h3>VIGS Stand Alone Version</h3>
+			<br/>
+		</center>
+	</body>
+</html>
