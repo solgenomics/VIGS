@@ -7,6 +7,7 @@ use File::Basename;
 use File::Slurp;
 use File::Spec;
 
+use Bio::Seq;
 use Bio::SeqIO;
 use Bio::BLAST::Database;
 use Data::Dumper;
