@@ -1,7 +1,7 @@
+var $j = jQuery.noConflict();
 
-
-$(document).ready(function () {
-	
+jQuery(document).ready(function ($) {
+		
 	//safari_alert();
 	
 	var score_array;
@@ -54,6 +54,7 @@ $(document).ready(function () {
 			}
 		}
 	});
+
 
 	//expand/collapse the n-mers graph when click on 'Collapse Graph' button
 	$('#collapse').click(function () {
@@ -953,18 +954,32 @@ $(document).ready(function () {
 	}
 
 	function disable_ui() {
-		$('#working').dialog("open");
+		// $('#working').dialog("open");
 	}
 
 	function enable_ui() {
-		$('#working').dialog("close");
+		// $('#working').dialog("close");
 	}
 
 	function hide_ui() {
-		Effects.swapElements('vigs_input_offswitch', 'vigs_input_onswitch');
-		Effects.hideElement('vigs_input_content');
-		Effects.swapElements('vigs_usage_offswitch', 'vigs_usage_onswitch');
-		Effects.hideElement('vigs_usage_content');
+		var e = document.getElementById('input_view');
+		var img = document.getElementById('tmp_img_input');
+		
+		e.visualEffect('BlindUp',{duration:0.5});
+		img.src = '/static/images/collapser_plus.png'
+		
+		var e = document.getElementById('results_section');
+		var img = document.getElementById('tmp_img_res');
+		
+		$('#res_bar').css("display","block");
+		
+		e.visualEffect('BlindDown',{duration:0.5});
+		img.src = '/static/images/collapser_minus.png'
+		
+		// Effects.swapElements('vigs_input_offswitch', 'vigs_input_onswitch');
+		// Effects.hideElement('vigs_input_content');
+		// Effects.swapElements('vigs_usage_offswitch', 'vigs_usage_onswitch');
+		// Effects.hideElement('vigs_usage_content');
 	}
 	
 	//use JQueryIu to define tooltip style

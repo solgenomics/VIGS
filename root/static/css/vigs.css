@@ -1324,3 +1324,143 @@ div.xref_rich_gbrowse2 img {
     color: #666;
 }
 
+/*****************************     VIGS    ****************************************************/
+
+.seq_map {
+    color: #777777;
+    width: 700px;
+    position:relative;
+    overflow: auto;
+    align: left;
+}
+
+.ui-dialog {
+    position:relative;
+}
+
+#region_square {
+    position:absolute;
+    vertical-align:middle;
+}
+
+.help_dialog {
+     color:blue;
+}
+
+#open_descriptions_dialog {
+    color:blue;
+}
+
+#desc_dialog {
+     overflow: auto;
+     position: relative;
+}
+
+.section_bar {
+	color:black;
+	font-weight:bold;
+	text-align:left;
+	background-color:#CCCCFF;
+	width:708px;
+	height:20px;
+	text-decoration:none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+	vertical-align: middle;
+}
+
+.section_bar a:link {
+	color:black;
+	margin-left:5px;
+	text-decoration:none;
+	vertical-align: middle;
+}
+
+.section_bar a:over {
+	color:black;
+	margin-left:5px;
+	text-decoration:none;
+}
+
+
+.subsection_bar {
+	color:black;
+	font-weight:bold;
+	background-color:#EEEEEE;
+	width:700px;
+	height:20px;
+	text-decoration:none;
+	text-align:left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+	vertical-align: middle;
+}
+
+.subsection_bar a:link {
+	color:black;
+	margin-left:5px;
+	text-decoration:none;
+	vertical-align: middle;
+}
+
+.subsection_bar a:over {
+	color:black;
+	margin-left:5px;
+	text-decoration:none;
+}
+
+.center_section {
+	width:695px;
+	position: relative;
+	text-align:left;
+/*	margin-left:30px;*/
+}
+
+.ui-tooltip, .arrow:after {
+	background: #000000;
+	border: 2px solid white;
+}
+.ui-tooltip {
+	padding: 5px 10px;
+	color: white;
+	border-radius: 10px;
+	font: bold 14px "Helvetica Neue", Sans-Serif;
+	box-shadow: 0 0 7px black;
+}
+.arrow {
+	width: 70px;
+	height: 16px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -35px;
+	bottom: -16px;
+}
+.arrow.top {
+	top: -16px;
+	bottom: auto;
+}
+.arrow.left {
+	left: 20%;
+}
+.arrow:after {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: -20px;
+	width: 25px;
+	height: 25px;
+	box-shadow: 6px 5px 9px -9px black;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	tranform: rotate(45deg);
+}
+.arrow.top:after {
+	bottom: -20px;
+	top: auto;
+}
+

@@ -4,13 +4,18 @@
 		<title>SGN-VIGS</title>
 		
 		<link rel="stylesheet" href="/static/js/jqueryui/themes/base/jquery-ui.css">
+		<!-- <link rel="stylesheet" href="/static/js/jqueryui/themes/custom-theme/jquery-ui-1.10.4.custom.css"> -->
 		<link rel="stylesheet" href="/static/css/vigs.css" type="text/css" />
 		
 		<script type="text/javascript" src="/static/js/jquery.js"></script>
 		<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
 		<script type="text/javascript" src="/static/js/jquery/iframe-post-form.js"></script>
-		<script type="text/javascript" src="/static/js/vigs.js"></script>
 		<script type="text/javascript" src="/static/js/Text/Markup.js"></script>
+		<script type="text/javascript" src="/static/js/prototype.js"></script>
+		<script type="text/javascript" src="/static/js/effects.js"></script>
+		<script type="text/javascript" src="/static/js/vigs.js"></script>
+		<!-- // <script type="text/javascript" src="/static/js/CXGN/Effects.js"></script> -->
+		
 		
 	</head>
 	<body>
