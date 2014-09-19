@@ -90,7 +90,7 @@ sub target_graph {
 		}
 		my %s_targets = ();
 		foreach my $m (@{$matches->{$s}}) { 
-			# print STDERR "m: ".$m->start()."\n";
+			#print STDERR "m: ".$m->start()."\n";
 			foreach my $n ($m->start()-1 .. $m->end()-1) {
 			# foreach my $n ($m->start()-1 .. $m->end()) {
 				# using coverage in algorithm

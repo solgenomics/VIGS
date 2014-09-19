@@ -3,9 +3,14 @@
 
 @databases
 $sequence => undef
+$default_db => undef
 $f_size => 0
 
 </%args>
+
+<div id="working" style="text-align: center; display:none;">
+  <img src="/static/images/wheel.gif" height="30"/>
+</div>
 
 
 <script>
@@ -68,16 +73,24 @@ $f_size => 0
 	<input class="input" id="mm" type="input" value="0" name="mismatch" size="1" />
 	<br />
 	<br />
-	Database 
-	<select class="input" id='bt2_db' name="database" title="Select plant species to host VIGS experiment">
-		<%perl>
-		foreach my $d (@databases) { 
+	Database <select class="input" id='bt2_db' name="database" title="Select plant species to host VIGS experiment">
+	<br />
+	<%perl>
+		foreach my $d (@databases) {
 			my $db_name = $d;
 			$db_name =~ s/_/ /g;
-
-		    print "<option value=\"".$d."\">".$db_name."</option><br />";
-		}     
-		</%perl>
+			
+			if ($default_db) {
+				if ($d eq $default_db) {
+					print "<option value=\"".$d."\" selected='selected'>".$db_name."</option><br />";
+				} else {
+					print "<option value=\"".$d."\">".$db_name."</option><br />";
+				}
+			} else {
+				print "<option value=\"".$d."\">".$db_name."</option><br />";
+			}
+		}
+	</%perl>
 	</select>
 	<br />
 	<br />

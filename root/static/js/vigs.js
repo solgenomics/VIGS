@@ -954,11 +954,20 @@ jQuery(document).ready(function ($) {
 	}
 
 	function disable_ui() {
-		// $('#working').dialog("open");
+		$('#working').dialog( {
+			height: 100,
+			width: 50,
+			modal: true,
+			autoOpen: false,
+			closeOnEscape: false,
+			open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog).hide(); $('.ui-dialog-titlebar-close').blur();},
+			title: 'Loading...'
+		});
+		$('#working').dialog("open");
 	}
 
 	function enable_ui() {
-		// $('#working').dialog("close");
+		$('#working').dialog("close");
 	}
 
 	function hide_ui() {
