@@ -45,7 +45,7 @@ $f_size => 0
 
 <center>
 <div class="section_bar">
-	<a href="javascript:miToggle('input_view','tmp_img_input',0.5,null);">
+	<a href="javascript:miToggle('input_view','tmp_img_input',0.1,null);">
 		<img id="tmp_img_input" border="0" src="/static/images/collapser_minus.png"/>
 		Run VIGS Tool
 	</a>
@@ -82,7 +82,7 @@ $f_size => 0
 			
 			if ($default_db) {
 				if ($d eq $default_db) {
-					print "<option value=\"".$d."\" selected='selected'>".$db_name."</option><br />";
+					print "<option value=\"".$d."\" selected=\"selected\">".$db_name."</option><br />";
 				} else {
 					print "<option value=\"".$d."\">".$db_name."</option><br />";
 				}
@@ -102,7 +102,7 @@ $f_size => 0
 
 
 	<br />
-	<button class="input" id="clear_form" value="clear" title="Clear form">Clear</button>&nbsp; &nbsp; &nbsp;
+	<!-- <button class="input" id="clear_form" value="clear" title="Clear form">Clear</button>&nbsp; &nbsp; &nbsp; -->
 	<button class="input" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button>
 
 	<br />
@@ -111,9 +111,9 @@ $f_size => 0
 
 	<center>
 	<div class="subsection_bar">
-		<a href="javascript:miToggle('usage_view','tmp_img_usage',0.5,null);">
+		<a href="javascript:miToggle('usage_view','tmp_img_usage',0.1,null);">
 			<img id="tmp_img_usage" border="0" src="/static/images/collapser_plus.png"/>
-			VIGS Usage
+			<b>VIGS Usage</b>
 		</a>
 	</div>
 	
@@ -175,8 +175,8 @@ $f_size => 0
 <!-- ##################################################################################### -->
 <br/>
 <center>
-<div id="res_bar" class="section_bar" style="display:none">
-	<a href="javascript:miToggle('results_section','tmp_img_res',0.5,null);">
+<div id="res_bar" class="section_bar" style="display:none;">
+	<a href="javascript:miToggle('results_section','tmp_img_res',0.1,null);">
 		<img id="tmp_img_res" border="0" src="/static/images/collapser_minus.png"/>
 		Results
 	</a>
@@ -187,10 +187,11 @@ $f_size => 0
 	<br/>
 	<!-- <center> -->
 	<div class="subsection_bar">
-		<a href="javascript:miToggle('hide1','tmp_img_hide1',0.5,null);">
+		<a href="javascript:miToggle('hide1','tmp_img_hide1',0.1,null);"  style="align:'left';">
 			<img id="tmp_img_hide1" border="0" src="/static/images/collapser_minus.png"/>
-			Modify Parameters
+			<b>Modify Parameters</b>
 		</a>
+		[<a id="help_dialog_1" class="help_dialog">Help</a>]
 	</div>
 	
 	<div id="hide1" style="display:none;">
@@ -225,10 +226,11 @@ $f_size => 0
 	
 	<br/>
 	<div class="subsection_bar">
-		<a href="javascript:miToggle('hide2','tmp_img_hide2',0.5,null);">
+		<a href="javascript:miToggle('hide2','tmp_img_hide2',0.1,null);">
 			<img id="tmp_img_hide2" border="0" src="/static/images/collapser_minus.png"/>
-			Distribution of n-mers
+			<b>Distribution of n-mers</b>
 		</a>
+		[<a id="help_dialog_2" class="help_dialog">Help</a>]
 	</div>
 	
 
@@ -248,10 +250,11 @@ $f_size => 0
 
 	<br/>
 	<div class="subsection_bar">
-		<a href="javascript:miToggle('hide3','tmp_img_hide3',0.5,null);">
+		<a href="javascript:miToggle('hide3','tmp_img_hide3',0.1,null);">
 			<img id="tmp_img_hide3" border="0" src="/static/images/collapser_minus.png"/>
-			Predicted Construct
+			<b>Predicted Construct</b>
 		</a>
+		[<a id="help_dialog_3" class="help_dialog">Help</a>]
 	</div>
 
 	<div id="hide3" style="display:none;">
@@ -263,10 +266,11 @@ $f_size => 0
 	<br/>
 
 	<div class="subsection_bar">
-		<a href="javascript:miToggle('hide4','tmp_img_hide4',0.5,null);">
+		<a href="javascript:miToggle('hide4','tmp_img_hide4',0.1,null);">
 			<img id="tmp_img_hide4" border="0" src="/static/images/collapser_minus.png"/>
-			Sequence Overview
+			<b>Sequence Overview</b>
 		</a>
+		[<a id="help_dialog_4" class="help_dialog">Help</a>]
 	</div>
 
 		<div id="hide4">
@@ -276,10 +280,11 @@ $f_size => 0
 
 	<br/>
 	<div class="subsection_bar">
-		<a href="javascript:miToggle('hide5','tmp_img_hide5',0.5,null);">
+		<a href="javascript:miToggle('hide5','tmp_img_hide5',0.1,null);">
 			<img id="tmp_img_hide5" border="0" src="/static/images/collapser_minus.png"/>
-			Description of matched genes
+			<b>Description of matched genes</b>
 		</a>
+		[<a id="help_dialog_5" class="help_dialog">Help</a>]
 	</div>
 	
 		<div id="hide5">
