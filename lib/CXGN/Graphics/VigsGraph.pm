@@ -2,7 +2,7 @@
 package CXGN::Graphics::VigsGraph;
 
 use Moose;
-use GD::Image;
+# use GD::Image;
 use Data::Dumper;
 use Bio::SeqIO;
 use Bio::BLAST::Database;
