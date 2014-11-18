@@ -73,7 +73,7 @@ $f_size => 0
 	<input class="input" id="mm" type="input" value="0" name="mismatch" size="1" />
 	<br />
 	<br />
-	Database <select class="input" id='bt2_db' name="database" title="Select plant species to host VIGS experiment">
+	<span title="Select plant species to host VIGS experiment">Database </span> <select class="input" id='bt2_db' name="database">
 	<br />
 	<%perl>
 		foreach my $d (@databases) {
@@ -82,7 +82,8 @@ $f_size => 0
 			
 			if ($default_db) {
 				if ($d eq $default_db) {
-					print "<option value=\"".$d."\" selected=\"selected\">".$db_name."</option><br />";
+					print "<option id=\"default_db\" value=\"".$d."\">".$db_name."</option><br />";
+#					print "<option id=\"default_db\" value=\"".$d."\" selected=\"selected\">".$db_name."</option><br />";
 				} else {
 					print "<option value=\"".$d."\">".$db_name."</option><br />";
 				}
@@ -97,8 +98,10 @@ $f_size => 0
 
 
 	<form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
-	    Upload Expression file: <input type="file" name="expression_file" id="expression_file" encoding="multipart/form-data" title="Insert a expression file in a tab-delimited format"/>
+	    <span  title="Insert a expression file in a tab-delimited format">Upload Expression file: </span><input type="file" name="expression_file" id="expression_file" encoding="multipart/form-data"/>
+			<a href="http://solgenomics.net/contact/form"  title="send us an email to add other species" style="font-size:8px;">More DBs</a>
 	</form>
+	
 
 
 	<br />
@@ -299,4 +302,8 @@ $f_size => 0
 </div>
 
 
+<script>
+var x = document.getElementById("default_db");
+x.selected = true;
+</script>
 
