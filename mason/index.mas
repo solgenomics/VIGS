@@ -83,6 +83,7 @@ $f_size => 0
 	<br />
 	<br />
 	<span title="Select plant species to host VIGS experiment">Database </span> <select class="input" id='bt2_db' name="database">
+		
 	<br />
 	<%perl>
 		foreach my $d (@databases) {
@@ -101,14 +102,14 @@ $f_size => 0
 			}
 		}
 	</%perl>
-	</select>
+	</select> 	<a href="http://solgenomics.net/contact/form"  title="send us an email to add other species" style="font-size:10px;"  target="_blank">More DBs</a>
+
 	<br />
 	<br />
 
 
 	<form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
 	    <span  title="Insert a expression file in a tab-delimited format">Upload Expression file: </span><input type="file" name="expression_file" id="expression_file" encoding="multipart/form-data"/>
-			<a href="http://solgenomics.net/contact/form"  title="send us an email to add other species" style="font-size:8px;"  target="_blank">More DBs</a>
 	</form>
 	
 
