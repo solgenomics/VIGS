@@ -8,6 +8,8 @@ $f_size => 0
 
 </%args>
 
+
+
 <div id="working" style="text-align: center; display:none;">
   <img src="/static/images/wheel.gif" height="30"/>
 </div>
@@ -53,6 +55,7 @@ $f_size => 0
 </script>
 
 <center>
+	
 <div class="section_bar">
 	<a href="javascript:miToggle('input_view','tmp_img_input',0.1,null);">
 		<img id="tmp_img_input" border="0" src="/static/images/collapser_minus.png"/>

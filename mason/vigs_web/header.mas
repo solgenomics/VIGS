@@ -19,8 +19,46 @@
 		
 	</head>
 	<body>
+		<!-- <iframe width="100%" height="100" scrolling="auto" src="http://solgenomics.net" style="border-width:0px;"></iframe> -->
+		
 		<center>
-			<h3>VIGS Tool</h3>
+			<div id="title_div">
+				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" height="70" src="/static/images/SGN_logo.png" title="Go back to the SGN"/><span id="sgn_text">Sol Genomics Network</span></a>
+			</div>
+			<br/>
+			<br/>
+			<h1 id="tool_title">VIGS Tool</h1>
 		</center>
 	</body>
+	<style>
+	#title_div {
+		color:#555;
+		font-size:30px;
+		left: -120px;
+		position: relative;
+	}
+	
+	#sgn_img {
+		top: 20px;
+		position: relative;
+	}
+		
+	#sgn_text {
+		font-size:35px;
+		color:#345;
+		font-style: oblique;
+		font-variant: small-caps;
+		position: relative;
+		text-decoration: underline;
+		text-decoration-color: #00F;
+		-moz-text-decoration-color: #00F;
+	}
+		
+	#tool_title {
+		font-size:20px;
+		color:#345;
+	}
+	
+	</style>
+	
 </html>
