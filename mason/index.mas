@@ -67,17 +67,17 @@ $f_size => 0
 	<br />
 	<br />
 
-	<span title="siRNA selected size">n-mer size</span> 
+	<span style="cursor:default" title="siRNA selected size">n-mer size</span> 
 	<input class="input" id="si_rna" type="input" value="21" name="fragment_size" size="2" />&nbsp; &nbsp; &nbsp;
 
-	<span title="Desired VIGS construct length">Fragment length</span> 
+	<span style="cursor:default" title="Desired VIGS construct length">Fragment length</span> 
 	<input class="input" id="f_length" type="input" value="300" name="seq_fragment" size="3" />&nbsp; &nbsp; &nbsp;
 
-	<span title="Number of mismatches allowed in Bowtie alignment">mismatches</span> 
+	<span style="cursor:default" title="Number of mismatches allowed in Bowtie alignment">mismatches</span> 
 	<input class="input" id="mm" type="input" value="0" name="mismatch" size="1" />
 	<br />
 	<br />
-	<span title="Select plant species to host VIGS experiment">Database </span> <select class="input" id='bt2_db' name="database">
+	<span style="cursor:default" title="Select plant species to host VIGS experiment">Database </span> <select class="input" id='bt2_db' name="database">
 		
 	<br />
 	<%perl>
@@ -104,7 +104,7 @@ $f_size => 0
 
 
 	<form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
-	    <span  title="Insert a expression file in a tab-delimited format">Upload Expression file: </span><input type="file" name="expression_file" id="expression_file" encoding="multipart/form-data"/>
+	    <span style="cursor:default" title="Insert a expression file in a tab-delimited format">Upload Expression file: </span><input type="file" name="expression_file" id="expression_file" encoding="multipart/form-data"/>
 	</form>
 	
 
