@@ -33,11 +33,13 @@ sub run_bowtie2 :Path('/vigs/result') :Args(0) {
  
     # get variables from catalyst object
     my $params = $c->req->body_params();
-    my $sequence = $c->req->param("sequence");
+    my $sequence = $c->req->param("sequence")||"Empty Sequence";
     my $fragment_size = $c->req->param("fragment_size");
     my $seq_fragment = $c->req->param("seq_fragment");
     my $missmatch = $c->req->param("missmatch");
     my $db_id = $c->req->param("database");
+	
+	print STDERR "seq: $sequence\n";
 	
     # clean the sequence and check if there are more than one sequence pasted
     if ($sequence =~ tr/>/>/ > 1) {
@@ -101,13 +103,13 @@ sub run_bowtie2 :Path('/vigs/result') :Args(0) {
     }
     elsif (length($sequence) < $fragment_size) {
 		push (@errors, "n-mer size must be lower or equal to sequence length.\n");
+    } elsif (!$seq_fragment || $seq_fragment < 100 || $seq_fragment > length($sequence)) {
+		push (@errors, "Wrong fragment size ($seq_fragment), it must be higher than 100 bp and lower than sequence length\n");
     }
+
 
     if (!$fragment_size ||$fragment_size < 18 || $fragment_size > 24 ) { 
 		push (@errors, "n-mer size ($fragment_size) value must be between 18-24 bp.\n");
-    }
-    if (!$seq_fragment || $seq_fragment < 100 || $seq_fragment > length($sequence)) {
-		push (@errors, "Wrong fragment size ($seq_fragment), it must be higher than 100 bp and lower than sequence length\n");
     }
     if ($missmatch =~ /[^\d]/ || $missmatch < 0 || $missmatch > 2 ) { 
 		push (@errors, "miss-match value ($missmatch) must be between 0-2\n");

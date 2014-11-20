@@ -21,7 +21,7 @@
 				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="http://solgenomics.net/documents/img/sgn_logo_icon.png" title="Go back to the SGN"/> <img src="http://solgenomics.net/documents/img/sgn_logo_text.png"/></a>
 			</div>
 			<br/>
-			<br/>
+			<!-- <br/> -->
 			<h1 id="tool_title">VIGS Tool</h1>
 		</center>
 	</body>
