@@ -231,8 +231,8 @@ $f_size => 0
 		<p style="color:red" id="cbr_p"></p>
 	</div>
 	
+	<!-- <br/> -->
 	
-	<br/>
 	<div class="subsection_bar">
 		<a href="javascript:miToggle('hide2','tmp_img_hide2',0.1,null);">
 			<img id="tmp_img_hide2" border="0" src="/static/images/collapser_minus.png"/>
