@@ -60,7 +60,7 @@ $f_size => 0
 	<br/>
 	<center>
 
-	Sequence:<span id="example">(<a onclick="example()">example sequence</a>)</span>
+	Sequence:<span id="example">(<a class="blue_text" onclick="example()" style="cursor:pointer">example sequence</a>)</span>
 	<br />
 
 	<textarea class="input" id="sequence" name="sequence" cols="62" rows="8"></textarea>
@@ -97,7 +97,7 @@ $f_size => 0
 			}
 		}
 	</%perl>
-	</select> 	<a href="http://solgenomics.net/contact/form"  title="send us an email to add other species" style="font-size:10px;"  target="_blank">More DBs</a>
+	</select> 	<a href="http://solgenomics.net/contact/form"  title="send us an email to add other species" style="font-size:10px;"  target="_blank">Request other DBs</a>
 
 	<br />
 	<br />

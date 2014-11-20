@@ -16,26 +16,37 @@
 		
 	</head>
 	<body>
-		<center>
-			<div id="title_div">
-				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="http://solgenomics.net/documents/img/sgn_logo_icon.png" title="Go back to the SGN"/> <img src="http://solgenomics.net/documents/img/sgn_logo_text.png"/></a>
+		<center style="margin-top:0px;">
+			<div id="title_div" style="margin-top:0px;">
+				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="http://solgenomics.net/documents/img/sgn_logo_icon.png" title="Go back to the SGN"/> <img id="sgn_text" src="http://solgenomics.net/documents/img/sgn_logo_text.png"/></a>
 			</div>
-			<br/>
-			<!-- <br/> -->
 			<h1 id="tool_title">VIGS Tool</h1>
 		</center>
 	</body>
 	<style>
 	#title_div {
-		color:#555;
-		font-size:30px;
 		right: 200px;
 		position: relative;
+		margin:0px;
 	}
 	
 	#sgn_img {
-		top: 20px;
 		position: relative;
+	}
+		
+	#sgn_text {
+		bottom: 20px;
+		position: relative;
+	}
+		
+	#sgn_link {
+		bottom: 10px;
+		text-decoration: none;
+	}
+		
+	#sgn_link a:hover {
+		bottom: 10px;
+		text-decoration: none;
 	}
 		
 	#tool_title {
