@@ -18,7 +18,7 @@
 	<body>
 		<center style="margin-top:0px;">
 			<div id="title_div" style="margin-top:0px;">
-				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="http://solgenomics.net/documents/img/sgn_logo_icon.png" title="Go back to the SGN"/> <img id="sgn_text" src="http://solgenomics.net/documents/img/sgn_logo_text.png"/></a>
+				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="/static/images/SGN_logo.png" title="Go back to the SGN"/> <img id="sgn_text" src="/static/images/sgn_logo_text.png"/></a>
 			</div>
 			<h1 id="tool_title">VIGS Tool</h1>
 		</center>

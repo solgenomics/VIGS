@@ -121,7 +121,7 @@ $f_size => 0
 	<div class="subsection_bar">
 		<a href="javascript:miToggle('usage_view','tmp_img_usage',0.1,null);">
 			<img id="tmp_img_usage" border="0" src="/static/images/collapser_plus.png"/>
-			<b>VIGS Usage</b>
+			<b>VIGS Tool Help</b>
 		</a>
 	</div>
 	
