@@ -14,7 +14,7 @@
 				<span style="color:#777">Send comments and feedback to </span><a href="mailto:sgn-feedback@solgenomics.net">sgn-feedback@solgenomics.net</a><br>
 			</td>
 			<td width="100">
-				<a href="http://www.cell.com/molecular-plant/pdf/S1674-2052(14)00053-7.pdf" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="Cite the SGN VIGS Tool"/></a>
+				<a href="http://www.cell.com/molecular-plant/pdf/S1674-2052(14)00053-7.pdf" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="VIGS Tool paper"/></a>
 			</td>
 		</tr>
 	</table>
@@ -32,22 +32,26 @@ urchinTracker();
 
 <style>
 
+#pagefooter {
+  line-height: 1.5;
+  border-top: 1px solid #c0c0c0;
+  padding-top: 2px;
+  margin-top: 25px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#eee;
+}
+
 #bti_img{
 	height:60px;
 	margin-left:5px;
-/*	border: 1px solid #aaa;
-	border-radius:5px;
-	box-shadow: 1px 1px 1px #bbb;
-*/
-	}
+}
 	
 #molp_img{
 	height:60px;
 	margin-right:5px;
-/*	border: 1px solid #aaa;
-	border-radius:5px;
-	box-shadow: 1px 1px 1px #bbb;
-*/
-	}
+}
 
 </style>

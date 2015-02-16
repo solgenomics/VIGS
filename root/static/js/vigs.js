@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
 		
 		//submit the form
 		$("#upload_expression_form").submit();
-    });
+  });
 
 	//get the expression file from the form (in a iframe) and start the analysis
 	$('#upload_expression_form').iframePostForm({
@@ -347,6 +347,10 @@ jQuery(document).ready(function ($) {
 					
 					$("#help_fsize").val(f_length);
 					$("#help_mm").val(mm);
+          
+          $("#pagefooter").css("position","relative");
+          $("#pagefooter").css("left","-10");
+          
 				}
 			},
 			error: function(response) {
