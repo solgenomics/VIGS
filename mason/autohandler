@@ -1,5 +1,99 @@
-<& /vigs_web/header.mas &>
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>SGN-VIGS</title>
+	
+	<link rel="stylesheet" href="/static/js/jqueryui/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/static/css/vigs.css" type="text/css" />
+	
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
+	<script type="text/javascript" src="/static/js/jquery/iframe-post-form.js"></script>
+	<script type="text/javascript" src="/static/js/Text/Markup.js"></script>
+	<script type="text/javascript" src="/static/js/prototype.js"></script>
+	<script type="text/javascript" src="/static/js/effects.js"></script>
+	<script type="text/javascript" src="/static/js/vigs.js"></script>
+	
+	<!--[if lt IE 7]>
+		<style type="text/css">
+			#wrapper { height:100%; }
+		</style>
+	<![endif]-->
+	
+	 <!-- Google Analytics Code -->
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	_uacct = "UA-2460904-1";
+	//prevent js error on remote script load failure
+	if(typeof(urchinTracker) == "function"){
+	urchinTracker();
+	}
+	</script>
+	
+	
+</head>
 
-% $m->call_next;
+<body>
+	<div id="nav_dialog" style="display:none;">
+		<p width="100">
+			This Tool was optimized for:<br/>
+			<br/>
+			<a href="https://www.google.com/chrome/browser/"><img src="https://lh3.ggpht.com/O0aW5qsyCkR2i7Bu-jUU1b5BWA_NygJ6ui4MgaAvL7gfqvVWqkOBscDaq4pn-vkwByUx=w300" height="20"> Google Chrome</a><br/>
+			<br/>
+			<a href="https://www.mozilla.org/en-US/firefox/new/"><img src="https://mozorg.cdn.mozilla.net/media/img/firefox/desktop/index/animations/firefox-logo.png" height="20"> Mozilla Firefox</a><br/>
+			<br/>
+			<a href="http://support.apple.com/en-us/HT6104"><img src="http://km.support.apple.com/kb/image.jsp?productid=PL165" height="20"> Safari</a><br/>
+			<br/>
+			<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"><img src="data:image/png;base64,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" height="20"> MS Internet Explorer 11</a><br/>
+			<br/>
+		</p>
+	</div>
 
-<& /vigs_web/footer.mas &>
+	<div id="wrapper">
+		<div id="header">
+			<& /vigs_web/header.mas &>
+		</div>
+	
+		<div id="content">
+			<% $m->call_next %>
+		</div>
+		<br>
+		<br>
+		<div id="footer">
+			<& /vigs_web/footer.mas &>
+		</div>
+		
+	</div>
+
+</body>
+	
+<script>
+	var x = document.getElementById("default_db");
+	x.selected = true;
+
+
+	var str = navigator.userAgent;
+	var ie = /MSIE/.test(str);
+	// alert(navigator.userAgent);
+
+	var $j = jQuery.noConflict();
+	jQuery(document).ready(function ($) {
+		if(ie) {
+			$('#nav_dialog').dialog({
+			modal: true,
+			closeOnEscape:true,
+			title: "Web Browser Compatibility",
+			});
+		}
+	});
+
+</script>
+	
+</html>
+
+
+
+
+
+
+

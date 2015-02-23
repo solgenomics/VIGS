@@ -1,33 +1,16 @@
-<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<title>SGN-VIGS</title>
-		
-		<link rel="stylesheet" href="/static/js/jqueryui/themes/base/jquery-ui.css">
-		<link rel="stylesheet" href="/static/css/vigs.css" type="text/css" />
-		
-		<script type="text/javascript" src="/static/js/jquery.js"></script>
-		<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
-		<script type="text/javascript" src="/static/js/jquery/iframe-post-form.js"></script>
-		<script type="text/javascript" src="/static/js/Text/Markup.js"></script>
-		<script type="text/javascript" src="/static/js/prototype.js"></script>
-		<script type="text/javascript" src="/static/js/effects.js"></script>
-		<script type="text/javascript" src="/static/js/vigs.js"></script>
-		
-	</head>
-	<body>
-		<center style="margin-top:0px;">
-			<div id="title_div" style="margin-top:0px;">
-				<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="/static/images/SGN_logo.png" title="Go back to the SGN"/> <img id="sgn_text" src="/static/images/sgn_logo_text.png"/></a>
-			</div>
-			<h1 id="tool_title">VIGS Tool</h1>
-		</center>
-	</body>
-	<style>
+<center style="margin-top:0px;">
+	<div id="title_div">
+		<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="/static/images/SGN_logo.png" title="Go back to the SGN"/> <img id="sgn_text" src="/static/images/sgn_logo_text.png"/></a>
+	</div>
+	<h1 id="tool_title">VIGS Tool</h1>
+</center>
+
+<style>
 	#title_div {
 		right: 200px;
 		position: relative;
 		margin:0px;
+		width: 100%;
 	}
 	
 	#sgn_img {
@@ -54,6 +37,4 @@
 		color:#345;
 	}
 	
-	</style>
-	
-</html>
+</style>

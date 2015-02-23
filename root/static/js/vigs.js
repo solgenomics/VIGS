@@ -347,10 +347,6 @@ jQuery(document).ready(function ($) {
 					
 					$("#help_fsize").val(f_length);
 					$("#help_mm").val(mm);
-          
-          $("#pagefooter").css("position","relative");
-          $("#pagefooter").css("left","-10");
-          
 				}
 			},
 			error: function(response) {
