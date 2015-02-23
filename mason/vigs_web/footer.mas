@@ -6,10 +6,16 @@
 				<img id="bti_img" src="/static/images/vigs_footer_bti.png" title="Boyce Thompson Institute"/>
 				</a>
 			</td>
+			<td>
+				<a href="http://www.nsf.gov" target="_blank"><img src="/static/images/nsf.png" height="50"/></a>
+			</td>
 			<td style="text-align:center;">
 				<a href="http://www.cell.com/molecular-plant/pdf/S1674-2052(14)00053-7.pdf" target="_new">Cite the VIGS Tool</a> |
 				<a href="http://nar.oxfordjournals.org/content/early/2014/11/26/nar.gku1195.full" target="_new">Cite SGN</a><br>
 				<span style="color:#777">Send comments and feedback to </span><a href="mailto:sgn-feedback@solgenomics.net">sgn-feedback@solgenomics.net</a><br>
+			</td>
+			<td>
+				&nbsp;
 			</td>
 			<td width="100">
 				<a href="http://www.cell.com/molecular-plant/pdf/S1674-2052(14)00053-7.pdf" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="VIGS Tool paper"/></a>
@@ -21,12 +27,12 @@
 <style>
 
 #bti_img{
-	height:60px;
+	height:55px;
 	margin-left:5px;
 }
 
 #molp_img{
-	height:60px;
+	height:55px;
 	margin-right:5px;
 }
 
