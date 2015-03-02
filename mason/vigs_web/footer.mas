@@ -10,15 +10,15 @@
 				<a href="http://www.nsf.gov" target="_blank"><img src="/static/images/nsf.png" height="50"/></a>
 			</td>
 			<td style="text-align:center;">
-				<a href="http://www.cell.com/molecular-plant/pdf/S1674-2052(14)00053-7.pdf" target="_new">Cite the VIGS Tool</a> |
-				<a href="http://nar.oxfordjournals.org/content/early/2014/11/26/nar.gku1195.full" target="_new">Cite SGN</a><br>
+				<a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" target="_new">Cite the VIGS Tool</a> |
+				<a href="http://nar.oxfordjournals.org/content/43/D1/D1036" target="_new">Cite SGN</a><br>
 				<span style="color:#777">Send comments and feedback to </span><a href="mailto:sgn-feedback@solgenomics.net">sgn-feedback@solgenomics.net</a><br>
 			</td>
 			<td>
 				&nbsp;
 			</td>
 			<td width="100">
-				<a href="http://www.cell.com/molecular-plant/pdf/S1674-2052(14)00053-7.pdf" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="VIGS Tool paper"/></a>
+				<a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="VIGS Tool paper"/></a>
 			</td>
 		</tr>
 	</table>
