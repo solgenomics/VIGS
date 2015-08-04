@@ -9,43 +9,33 @@
 
 </script>
 
-<center style="margin-top:0px;">
-	<div id="title_div">
-		<a id="sgn_link" href="http://solgenomics.net"><img id="sgn_img" src="/static/images/SGN_logo.png" title="Go back to the SGN"/> <img id="sgn_text" src="/static/images/sgn_logo_text.png"/></a>
-	</div>
-	<h1 id="tool_title">VIGS Tool</h1>
-</center>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" style="padding:8px 8px"><img src="/static/images/sgn_transparent_logo.png" width="40"></a>
+      <a class="navbar-brand" href="/">Sol Genomics Network</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="/">Home</a></li> -->
+        <& toolbar/genomes.mas &>
+        <& toolbar/tools.mas &>
+        <& toolbar/about_us.mas &>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <& toolbar/search.mas &>
+        <& toolbar/login.mas &>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
 
-<style>
-	#title_div {
-		right: 200px;
-		position: relative;
-		margin:0px;
-		width: 100%;
-	}
-	
-	#sgn_img {
-		position: relative;
-	}
-		
-	#sgn_text {
-		bottom: 20px;
-		position: relative;
-	}
-		
-	#sgn_link {
-		bottom: 10px;
-		text-decoration: none;
-	}
-		
-	#sgn_link a:hover {
-		bottom: 10px;
-		text-decoration: none;
-	}
-		
-	#tool_title {
-		font-size:20px;
-		color:#345;
-	}
-	
-</style>
+
+

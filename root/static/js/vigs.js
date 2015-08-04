@@ -55,7 +55,6 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
-
 	//expand/collapse the n-mers graph when click on 'Collapse Graph' button
 	$('#collapse').click(function () {
 		activateCollapse(score_array,best_seq,seq,expr_msg,ids,m_aoa);
@@ -293,6 +292,7 @@ jQuery(document).ready(function ($) {
 					
 					//show result sections
 					$("#hide1").css("display","inline");
+					$(".subsection_bar").css("display","block");
 
 					//assign values to html variables
 					$("#coverage_val").val(coverage);
@@ -363,8 +363,8 @@ jQuery(document).ready(function ($) {
 		var best_start = +$("#best_start").val();
 		var best_end = +$("#best_end").val();
 		var seq_length = +$("#seq_length").val();
-		var img_width = 700;
-		var xscale = +(700/seq_length); // to transform sequence length to pixels
+		var img_width = 900;
+		var xscale = +(img_width/seq_length); // to transform sequence length to pixels
 		var vline_tag = 100;
 
 		var c=document.getElementById("myCanvas");
@@ -376,7 +376,7 @@ jQuery(document).ready(function ($) {
 		} else {
 			c.height = +img_height;
 		}
-		if (seq_length < 700 || zoom) {
+		if (seq_length < img_width || zoom) {
 			xscale = 1;
 			img_width = seq_length;
 		}
@@ -448,8 +448,8 @@ jQuery(document).ready(function ($) {
 		var coverage = $("#coverage_val").val();
 		var seq_length = $("#seq_length").val();
 
-		var xscale = +(700/seq_length); // to transform sequence length to pixels
-		var img_width = 700;
+		var img_width = 900;
+		var xscale = +(img_width/seq_length); // to transform sequence length to pixels
 		var off_set = 20; //just under the horizontal line
 		var coord_y = 0;
 
@@ -459,7 +459,7 @@ jQuery(document).ready(function ($) {
 		if (collapsed) {
 			before_block = 25;
 		}
-		if (seq_length < 700 || zoom) {
+		if (seq_length < img_width || zoom) {
 			xscale = 1;
 			img_width = seq_length;
 		}
@@ -581,14 +581,14 @@ jQuery(document).ready(function ($) {
 		var coverage = $("#coverage_val").val();
 		var seq_length = $("#seq_length").val();
 
-		var xscale = +(700/seq_length); // to transform sequence legth to pixels
+		var img_width = 900;
+		var xscale = +(img_width/seq_length); // to transform sequence legth to pixels
 		var img_h = +(img_height-52);
-		var img_width = 700;
 
 		if (collapsed) {
 			img_h = +((ids.length*35)+21);
 		}
-		if (seq_length < 700 || zoom) {
+		if (seq_length < img_width || zoom) {
 			xscale = 1;
 			img_width = seq_length;
 		}
@@ -646,7 +646,7 @@ jQuery(document).ready(function ($) {
 		if (color) {
 			var markup = new Text.Markup( { 'highlight' : [ '<span class="highlighted2" style="background:#D2D4D6;">', '</span>' ], 'break' : [ '<br />', '' ], 'space' : [ '<span>&nbsp;</span>', '' ] });
 		} else {
-			var markup = new Text.Markup( { 'highlight' : [ '<span class="highlighted">', '</span>' ], 'break' : [ '<br />', '' ], 'space' : [ '<span>&nbsp;</span>', '' ] });
+			var markup = new Text.Markup( { 'highlight' : [ '<span class="highlighted" style="background:yellow;">', '</span>' ], 'break' : [ '<br />', '' ], 'space' : [ '<span>&nbsp;</span>', '' ] });
 		}
 
 		var source_el = document.getElementById('query');
@@ -740,13 +740,13 @@ jQuery(document).ready(function ($) {
 
 	//Function to change values of custom region by dragging the selection square
 	function getSquareCoords(score_array,best_seq,seq) {
-		var img_width = 700;
+		var img_width = 900;
 		var seq_length = $("#seq_length").val();
 		var zoom = $("#zoom").val();
 		var rev_xscale = +(seq_length/img_width); // to transform sequence length to pixels
 		$("#cbr_p").html("");
 
-		if (+zoom || seq_length < 700) {
+		if (+zoom || seq_length < img_width) {
 			rev_xscale = 1;
 			img_width = seq_length;
 		}
@@ -834,16 +834,16 @@ jQuery(document).ready(function ($) {
 		var map_el = document.getElementById('myCanvas');
 		var seq_length = +$("#seq_length").val();
 
-		var img_width = 700;
+		var img_width = 900;
 		var xscale = +(+img_width/+seq_length); // to transform sequence length to pixels
 
 		var zoom = $("#zoom").val();
 
-		if (zoom == 1 || seq_length < 700) {
+		if (zoom == 1 || seq_length < img_width) {
 			xscale = 1;
 			img_width = seq_length;
 		}
-		if (seq_length < 700) {document.getElementById("seq_map").style.width=""+seq_length+"px";}
+		if (seq_length < img_width) {document.getElementById("seq_map").style.width=""+seq_length+"px";}
 
 
 		if ((cbr_start > 0) && (cbr_end <= seq_length) && (cbr_end >= cbr_start+99)) {
@@ -971,6 +971,8 @@ jQuery(document).ready(function ($) {
 	}
 
 	function hide_ui() {
+		$("#input_collapser").css("display","block");
+    
 		var e = document.getElementById('input_view');
 		var img = document.getElementById('tmp_img_input');
 		
@@ -991,29 +993,5 @@ jQuery(document).ready(function ($) {
 		// Effects.hideElement('vigs_usage_content');
 	}
 	
-	//use JQueryIu to define tooltip style
-    $(function() {
-	   $( document ).tooltip({
-		   position: {
-			   my: "center bottom-20",
-			   at: "center top",
-			   using: function( position, feedback ) {
-				   $( this ).css( position );
-				   $( "<div>" )
-				   .addClass( "arrow" )
-				   .addClass( feedback.vertical )
-				   .addClass( feedback.horizontal )
-				   .appendTo( this );
-			   }
-		   }
-	   });
-   });
-	
-	
-	// function safari_alert() {
-	// 	if (navigator.appVersion.match(/Safari/i) && !navigator.appVersion.match(/chrome/i)) {
-	// 		alert("SGN VIGS Tool does not support Safari, please use a different browser like Firefox (recommended) or Google chrome.");
-	// 	}
-	// }
 });
 

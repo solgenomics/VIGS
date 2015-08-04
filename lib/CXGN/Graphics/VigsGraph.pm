@@ -15,7 +15,7 @@ has 'seq_window_size' => (is=>'rw', isa=>'Int', default=>100);
 has 'seq_fragment' => (is=>'rw', isa=>'Int', default=>300);
 has 'query_seq' => (is=>'rw', isa=>'Str');
 has 'step_size' => (is=>'rw', isa=>'Int', default=>4);
-has 'width' => (is=>'rw', isa=>'Int', default=>700);
+has 'width' => (is=>'rw', isa=>'Int', default=>900);
 has 'height'=> (is=>'rw', isa=>'Int', default=>3600);
 has 'font' => (is =>'rw', isa=>'GD::Font');
 has 'ruler_height' => (is => 'ro', isa=>'Int', default=>20);

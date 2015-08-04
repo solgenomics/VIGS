@@ -246,11 +246,10 @@ sub view :Path('/vigs/view') Args(0) {
     my $status = $c->req->param("status") || 1;
     
     if (defined($expr_file)) {
-		my $expr_dir = $c->generated_file_uri('expr_files', $expr_file);
-		my $expr_path = $c->path_to($expr_dir);
-    
-		$expr_hash = get_expression_hash($expr_path);
-		# print STDERR "hash header: ".Dumper($$expr_hash{"header"})."\n";
+      my $expr_path = $c->config->{cluster_shared_tempdir}."/$expr_file";
+
+      $expr_hash = get_expression_hash($expr_path);
+      # print STDERR "hash header: ".Dumper($$expr_hash{"header"})."\n";
     }
 
     $seq_filename = File::Spec->catfile($c->config->{cluster_shared_tempdir}, $seq_filename);
@@ -367,13 +366,13 @@ sub upload_expression_file_for_vigs_POST : Args(0) {
     my $expr_file = undef;
 
     if (defined($upload)) {
-	$expr_file = $upload->tempname;    
-	$expr_file =~ s/\/tmp\///;
-    
-	my $expr_dir = $c->generated_file_uri('expr_files', $expr_file);
-	my $final_path = $c->path_to($expr_dir);
+      $expr_file = $upload->tempname;    
+      $expr_file =~ s/\/tmp\///;
 
-	write_file($final_path, $upload->slurp);
+      my $final_path = $c->config->{cluster_shared_tempdir}."/$expr_file";
+      print STDERR "$final_path\n";
+
+      write_file($final_path, $upload->slurp);
     }
     
     $c->stash->{rest} = {

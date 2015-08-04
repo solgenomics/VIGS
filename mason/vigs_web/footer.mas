@@ -1,27 +1,14 @@
 <center>
-	<table id="pagefooter">
-		<tr>
-			<td width="100">
-				<a href="http://bti.cornell.edu/" style="float:left;">
-				<img id="bti_img" src="/static/images/vigs_footer_bti.png" title="Boyce Thompson Institute"/>
-				</a>
-			</td>
-			<td>
-				<a href="http://www.nsf.gov" target="_blank"><img src="/static/images/nsf.png" height="50"/></a>
-			</td>
-			<td style="text-align:center;">
-				<a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" target="_new">Cite the VIGS Tool</a> |
-				<a href="http://nar.oxfordjournals.org/content/43/D1/D1036" target="_new">Cite SGN</a><br>
-				<span style="color:#777">Send comments and feedback to </span><a href="mailto:sgn-feedback@solgenomics.net">sgn-feedback@solgenomics.net</a><br>
-			</td>
-			<td>
-				&nbsp;
-			</td>
-			<td width="100">
-				<a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="VIGS Tool paper"/></a>
-			</td>
-		</tr>
-	</table>
+	<div id="pagefooter">
+    <a href="http://bti.cornell.edu/" style="float:left;"><img id="bti_img" src="/static/images/vigs_footer_bti.png" title="Boyce Thompson Institute"/></a>
+    <a href="http://www.nsf.gov" style="float:left;" target="_blank"><img src="/static/images/nsf.png" height="50"/></a>
+    <span style="line-height:60px;">
+      <a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" target="_new">Cite the VIGS Tool</a> |
+      <a href="http://nar.oxfordjournals.org/content/43/D1/D1036" target="_new"> Cite SGN</a> |
+      <a href="http://solgenomics.net/contact/form"> Send comments and feedback</a>
+    </span>
+    <a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" target="_new" style="float:right;"><img id="molp_img" src="/static/images/vigs_footer_mp.png" title="VIGS Tool paper"/></a>
+	</div>
 </center>
 
 <style>
