@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
 	});
 
 	//expand/collapse the n-mers graph when click on 'Collapse Graph' button
-	$('#collapse').click(function () {
+	$('#collapse_btn').click(function () {
 		activateCollapse(score_array,best_seq,seq,expr_msg,ids,m_aoa);
 	});
 
@@ -291,8 +291,8 @@ jQuery(document).ready(function ($) {
 					}
 					
 					//show result sections
-					$("#hide1").css("display","inline");
-					$(".subsection_bar").css("display","block");
+					$(".subsection_bar").css("display","");
+          // $("#hide1").css("display","block");
 
 					//assign values to html variables
 					$("#coverage_val").val(coverage);
@@ -308,8 +308,8 @@ jQuery(document).ready(function ($) {
 					$("#img_height").val(response.img_height);
 
 					//set collapse and zoom buttons
-					$("#collapse").val(1);
-					$("#collapse").html("Expand Graph");
+					$("#collapse_btn").val(1);
+					$("#collapse_btn").html("Expand Graph");
 					$("#zoom").val(0);
 					$("#zoom").html("Zoom In");
 
@@ -342,8 +342,9 @@ jQuery(document).ready(function ($) {
 					}
 
 					$("#target_info").html(t_info);
-					$("#hide2").css("display","inline");
-					$("#hide3").css("display","inline");
+          // $("#hide2").css("display","");
+          // $("#hide3").css("display","");
+					$("#results_section").css("display","");
 					
 					$("#help_fsize").val(f_length);
 					$("#help_mm").val(mm);
@@ -703,17 +704,17 @@ jQuery(document).ready(function ($) {
 
 	function activateCollapse(score_array,best_seq,seq,expr_msg,ids,m_aoa) {
 		document.getElementById("region_square").style.height="0px";
-		var collapsed = $("#collapse").val();
+		var collapsed = $("#collapse_btn").val();
 		var zoom = $("#zoom").val();
 		var seq_length = $("#seq_length").val();
 
 		if (collapsed == 0) {
-			$("#collapse").html("Expand Graph");
-			$("#collapse").val(1);
+			$("#collapse_btn").html("Expand Graph");
+			$("#collapse_btn").val(1);
 			collapsed = 1;
 		} else {
-			$("#collapse").html("Collapse Graph");
-			$("#collapse").val(0);
+			$("#collapse_btn").html("Collapse Graph");
+			$("#collapse_btn").val(0);
 			collapsed = 0;
 		}
 		createMap(+collapsed,+zoom,score_array,expr_msg,ids,m_aoa);
@@ -721,7 +722,7 @@ jQuery(document).ready(function ($) {
 	}
 
 	function activateZoom(score_array,best_seq,seq,expr_msg,ids,m_aoa) {
-		var collapsed = $("#collapse").val();
+		var collapsed = $("#collapse_btn").val();
 		var zoom = $("#zoom").val();
 		var seq_length = $("#seq_length").val();
 
@@ -973,19 +974,17 @@ jQuery(document).ready(function ($) {
 	function hide_ui() {
 		$("#input_collapser").css("display","block");
     
-		var e = document.getElementById('input_view');
-		var img = document.getElementById('tmp_img_input');
+    var img = document.getElementById('tmp_img_input');
+    $('#input_view').collapse("hide");
+    
+    img.src = '/static/images/collapser_plus.png'
 		
-		e.visualEffect('BlindUp',{duration:0.5});
-		img.src = '/static/images/collapser_plus.png'
-		
-		var e = document.getElementById('results_section');
-		var img = document.getElementById('tmp_img_res');
+    // var img = document.getElementById('tmp_img_res');
 		
 		$('#res_bar').css("display","block");
-		
-		e.visualEffect('BlindDown',{duration:0.5});
-		img.src = '/static/images/collapser_minus.png'
+    // $('#results_section').collapse("show");
+    
+    // img.src = '/static/images/collapser_minus.png'
 		
 		// Effects.swapElements('vigs_input_offswitch', 'vigs_input_onswitch');
 		// Effects.hideElement('vigs_input_content');

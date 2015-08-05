@@ -10,8 +10,7 @@
 	<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
 	<script type="text/javascript" src="/static/js/jquery/iframe-post-form.js"></script>
 	<script type="text/javascript" src="/static/js/Text/Markup.js"></script>
-	<script type="text/javascript" src="/static/js/prototype.js"></script>
-	<script type="text/javascript" src="/static/js/effects.js"></script>
+  <!-- // <script type="text/javascript" src="/static/js/effects.js"></script> -->
 	<script type="text/javascript" src="/static/js/vigs.js"></script>
 	
 	<!--[if lt IE 7]>

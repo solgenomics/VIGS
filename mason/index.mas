@@ -21,30 +21,24 @@ $f_size => 0
 	function example() { 
 	    document.getElementById("sequence").value=seq;
 	}
-	
-	function miToggle(element,statusImg,t,poller_to_control) {
-		var e = $(element);
-		var img = $(statusImg);
+</script>
 
-		if (e.visible()) {
-			e.visualEffect('BlindUp',{duration:t});
-      
-      img.src = '/static/images/collapser_plus.png'
-      
-			if (poller_to_control){
-				poller_to_control.stop();
-			}
-		} else {
-			e.visualEffect('BlindDown',{duration:t});
-      
-      img.src = '/static/images/collapser_minus.png'
-      
-			if (poller_to_control){
-				 poller_to_control.registerCallback();
-				 poller_to_control.execute();
-			}
-		}
-	 }
+<script>
+  function folding_section(f_div,img_id) {
+    var div_e = jQuery(f_div);
+    var img_e = jQuery(img_id);
+    
+    // alert(div_e.hasClass("collapse")+"  "+div_e.hasClass("in"));
+    
+    if (div_e.hasClass("collapse") && div_e.hasClass("in")) {
+      div_e.collapse('hide');
+      img_e.attr("src",'/static/images/collapser_plus.png');
+    } 
+    else {
+      div_e.collapse('show');
+      img_e.attr("src",'/static/images/collapser_minus.png');
+    }
+  }
 </script>
 
 
@@ -52,14 +46,14 @@ $f_size => 0
 	<h3> SGN VIGS Tool</h3>
   
   <div id="input_collapser" style="text-align:left;width:900px;display:none">
-  	<a class="collapser_link" href="javascript:miToggle('input_view','tmp_img_input',0.1,null);">
+  	<a class="collapser_link" href="javascript:folding_section('#input_view','#tmp_img_input');">
   		<img id="tmp_img_input" class="collapser_img" src="/static/images/collapser_minus.png"/>
   		<b>INPUT</b>
   	</a>
   </div>
 </center>
 
-<div id="input_view">
+<div id="input_view" class="collapse in">
 	<center>
 
   <div class="form-group">
@@ -114,16 +108,15 @@ $f_size => 0
 	<br />
   <br />
   
-  <form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
-      <span style="cursor:default" title="Insert a expression file in a tab-delimited format">Upload Expression file: </span>
+    <form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
+        <span style="cursor:default" title="Insert a expression file in a tab-delimited format">Upload Expression file: </span>
       
-      <div class="input-group">
-        <span class="input-group-btn">
-          <input class="btn btn-default" class="form-control" type="file" name="expression_file" id="expression_file" encoding="multipart/form-data"/>
-        </span>
-      </div>
-  </form>
-  
+        <div class="input-group text-center">
+          <span class="input-group-btn">
+            <input class="btn btn-default" class="form-control" type="file" name="expression_file" id="expression_file" style="display:inline" encoding="multipart/form-data"/>
+          </span>
+        </div>
+    </form>
   
 	<br />
   <button type="button" class="btn btn-primary" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button>
@@ -133,13 +126,13 @@ $f_size => 0
 
 	<center>
 	<div class="subsection_bar">
-		<a class="collapser_link" href="javascript:miToggle('usage_view','tmp_img_usage',0.1,null);">
+		<a class="collapser_link" href="javascript:folding_section('#usage_view','#tmp_img_usage');">
       <img id="tmp_img_usage" class="sub_collapser_img" src="/static/images/collapser_plus.png"/>
 			Usage Help
 		</a>
 	</div>
 
-	<div id="usage_view" class="center_section" style="display:none">
+    <div id="usage_view" class="collapse center_section">
       <p>
         <b>Usage:</b><br />
         1. Paste a <b>sequence</b> like in one of the examples:<br />
@@ -165,9 +158,9 @@ $f_size => 0
         ...
       </span>
       </p>
-    
-	</div>
-	</center>
+    </div>
+  
+  </center>
   
 </div>
 	
@@ -198,25 +191,24 @@ $f_size => 0
 <br/>
 <center>
 <div id="res_bar" style="text-align:left;width:900px;display:none;">
-	<a class="collapser_link" href="javascript:miToggle('results_section','tmp_img_res',0.1,null);">
+	<a class="collapser_link" href="javascript:folding_section('#results_section','#tmp_img_res');">
 		<img id="tmp_img_res" class="collapser_img" src="/static/images/collapser_minus.png"/>
 		<b>OUTPUT</b>
 	</a>
 </div>
 
-<div id="results_section" style="display:none">
+<div id="results_section" class="collapse in" style="display:none;">
 	
 	<br/>
-	<!-- <center> -->
-	<div class="subsection_bar" style="display:none;">
-		<a class="collapser_link" href="javascript:miToggle('hide1','tmp_img_hide1',0.1,null);">
+	<div class="subsection_bar">
+		<a class="collapser_link" href="javascript:folding_section('#hide1','#tmp_img_hide1');">
 			<img id="tmp_img_hide1" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Modify Parameters
 		</a>
 		[<a id="help_dialog_1">Help</a>]
 	</div>
 	
-  <div id="hide1" class="center_section" style="display:none;">
+  <div id="hide1" class="collapse in">
     <center>
       <div id="score_p" style="text-align:'right';"></div>
       
@@ -224,7 +216,7 @@ $f_size => 0
         <tr>
           <td><label for="cbr_start">Region Start: &nbsp; </label><input type="text" id="cbr_start" class="form-control pull-right" style="width: 60px;"></td>
           <td><label for="cbr_end">Region End: &nbsp; </label><input type="text" id="cbr_end" class="form-control pull-right" style="width: 60px;"></td>
-          <td><button type="button" id="set_custom" class="btn btn-primary" value="set custom best region">Set Custom Region</button><br /></td>
+          <td><button type="button" id="set_custom" class="btn btn-primary" value="set custom best region">Set Custom Region</button></td>
         </tr>
         <tr>
           <td><label for="t_num">Target genes: &nbsp; </label><input type="text" id="t_num" name="targets" min="1" class="form-control pull-right" style="width: 60px;"></td>
@@ -239,56 +231,54 @@ $f_size => 0
       <p style="color:red" id="cbr_p"></p>
     </center>
   </div>
+  
 <br>	
-	<div class="subsection_bar" style="text-align:left;width:900px;display:none;">
-		<a class="collapser_link" href="javascript:miToggle('hide2','tmp_img_hide2',0.1,null);">
+	<div class="subsection_bar" style="text-align:left;width:900px;">
+		<a class="collapser_link" href="javascript:folding_section('#hide2','#tmp_img_hide2');">
 			<img id="tmp_img_hide2" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Distribution of n-mers
 		</a>
 		[<a id="help_dialog_2">Help</a>]
 	</div>
-	
 
-		<div id="hide2" class="center_section" style="display:none;">
-      <center>
-		    <div class="seq_map" id="seq_map">
-		         <div class="region_square" id="region_square"></div>
-		     	 <canvas id="myCanvas" width="900" height="600">
-		     	     Your browser does not support the HTML5 canvas
-		     	 </canvas>
-		    </div>
-        <!-- <br /> -->
-		    <button id="collapse" class="btn btn-primary" value="1">Expand Graph</button>
-		    <button id="zoom" class="btn btn-primary" value="0">Zoom In</button>
-		    <button id="params_dialog" class="btn btn-primary">Parameters Used</button>
-				<br/>
-      </center>
-		</div>
+  <div id="hide2" class="collapse in center_section">
+    <center>
+      <div class="seq_map" id="seq_map">
+        <div class="region_square" id="region_square"></div>
+        <canvas id="myCanvas" width="900" height="600">
+          Your browser does not support the HTML5 canvas
+        </canvas>
+      </div>
+      <button id="collapse_btn" class="btn btn-primary" value="1">Expand Graph</button>
+      <button id="zoom" class="btn btn-primary" value="0">Zoom In</button>
+      <button id="params_dialog" class="btn btn-primary">Parameters Used</button>
+    </center>
+  </div>
 
 	<br/>
 	<div class="subsection_bar" style="text-align:left;width:900px;display:none;">
-		<a class="collapser_link" href="javascript:miToggle('br_seq','tmp_img_hide3',0.1,null);">
+		<a class="collapser_link" href="javascript:folding_section('#br_seq','#tmp_img_hide3');">
 			<img id="tmp_img_hide3" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Predicted Construct
 		</a>
 		[<a id="help_dialog_3">Help</a>]
 	</div>
 
-  <div id="br_seq" style="width:600px;">
+  <div id="br_seq" class="collapse in" style="width:600px;">
       <p id="best_seq" style="font-family:courier;font-size:16px;text-align:left;"></p>
   </div>
 
 	<br/>
 
 	<div class="subsection_bar" style="text-align:left;width:900px;display:none;">
-		<a class="collapser_link" href="javascript:miToggle('hide4','tmp_img_hide4',0.1,null);">
+		<a class="collapser_link" href="javascript:folding_section('#hide4','#tmp_img_hide4');">
 			<img id="tmp_img_hide4" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Sequence Overview
 		</a>
 		[<a id="help_dialog_4">Help</a>]
 	</div>
 
-		<div id="hide4" class="center_section" style="width:700px;">
+		<div id="hide4" class="collapse in center_section" style="width:700px;">
       <center>
         <span id="query" style="display:none;text-align:left;"></span>
         <div id="markup" style="align:left;text-align:left;"></div>
@@ -297,14 +287,14 @@ $f_size => 0
 
 	<br/>
 	<div class="subsection_bar" style="text-align:left;width:900px;display:none;">
-		<a class="collapser_link" href="javascript:miToggle('hide5','tmp_img_hide5',0.1,null);">
+		<a class="collapser_link" href="javascript:folding_section('#hide5','#tmp_img_hide5');">
 			<img id="tmp_img_hide5" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Description of matched genes
 		</a>
 		[<a id="help_dialog_5">Help</a>]
 	</div>
 	
-  <div id="hide5" class="center_section">
+  <div id="hide5" class="collapse in center_section">
     <center>
       <table id="target_info" class="table"></table>
 
