@@ -6,8 +6,12 @@
 	<link rel="stylesheet" href="/static/js/jqueryui/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/static/css/vigs.css" type="text/css" />
 	
+  <!-- Bootstrap libraries and css -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+  
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
-	<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
 	<script type="text/javascript" src="/static/js/jquery/iframe-post-form.js"></script>
 	<script type="text/javascript" src="/static/js/Text/Markup.js"></script>
   <!-- // <script type="text/javascript" src="/static/js/effects.js"></script> -->
@@ -30,13 +34,8 @@
 	</script>
 	
   
-  <!-- Bootstrap libraries and css -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/js/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
   <script src="/static/js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-  <!-- // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="/static/js/jqueryui/jquery-ui.js"></script>
 	
 </head>
 
