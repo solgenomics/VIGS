@@ -10,7 +10,7 @@
 </script>
 
   
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -24,6 +24,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="/">Home</a></li> -->
+        <& toolbar/maps.mas &>
         <& toolbar/genomes.mas &>
         <& toolbar/tools.mas &>
         <& toolbar/about_us.mas &>
@@ -44,6 +45,8 @@
       margin-top: 0; // remove the gap so it doesn't close
    }
   .dropdown-menu > li > a {
-    height: 22px; 
-  }
+      line-height: 14px;
+      font-size: 14px;
+      margin-top:0px;
+      padding-top:0px;  }
 </style>
