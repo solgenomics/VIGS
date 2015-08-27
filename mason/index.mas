@@ -215,7 +215,7 @@ $f_size => 0
 			<img id="tmp_img_hide1" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Modify Parameters
 		</a>
-		[<a id="help_dialog_1">Help</a>]
+		<span class="pull-right">[<a id="help_dialog_1">Help</a>]</span>
 	</div>
 	
   <div id="hide1" class="collapse in">
@@ -248,7 +248,7 @@ $f_size => 0
 			<img id="tmp_img_hide2" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Distribution of n-mers
 		</a>
-		[<a id="help_dialog_2">Help</a>]
+		<span class="pull-right">[<a id="help_dialog_2">Help</a>]</span>
 	</div>
 
   <div id="hide2" class="collapse in center_section">
@@ -271,7 +271,7 @@ $f_size => 0
 			<img id="tmp_img_hide3" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Predicted Construct
 		</a>
-		[<a id="help_dialog_3">Help</a>]
+		<span class="pull-right">[<a id="help_dialog_3">Help</a>]</span>
 	</div>
 
   <div id="br_seq" class="collapse in" style="width:600px;">
@@ -285,7 +285,7 @@ $f_size => 0
 			<img id="tmp_img_hide4" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Sequence Overview
 		</a>
-		[<a id="help_dialog_4">Help</a>]
+		<span class="pull-right">[<a id="help_dialog_4">Help</a>]</span>
 	</div>
 
 		<div id="hide4" class="collapse in center_section" style="width:700px;">
@@ -301,7 +301,7 @@ $f_size => 0
 			<img id="tmp_img_hide5" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Description of matched genes
 		</a>
-		[<a id="help_dialog_5">Help</a>]
+		<span class="pull-right">[<a id="help_dialog_5">Help</a>]</span>
 	</div>
 	
   <div id="hide5" class="collapse in center_section">
