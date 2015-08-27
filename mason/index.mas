@@ -9,8 +9,22 @@ $f_size => 0
 </%args>
 
 
-<div id="working" style="text-align: center; display:none;">
-  <img src="/static/images/wheel.gif" height="30"/>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">VIGS Running</h4>
+      </div>
+      <div class="modal-body">
+        <center>
+          <img src="/static/images/wheel.gif" />
+        </center>
+      </div>
+    </div>
+    
+  </div>
 </div>
 
 

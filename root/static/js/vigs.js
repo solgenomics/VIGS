@@ -196,18 +196,6 @@ jQuery(document).ready(function ($) {
 		$("#mm").val(0);
 		$("#expression_file").val(null);
 	});
-
-	$('#working').dialog( { 
-		height: 100,
-		width:  50,
-		modal: true,
-		autoOpen: false,
-		closeOnEscape: false,
-		draggable: false,
-		resizable: false,
-		open: function() { $(this).closest('.ui-dialog').find('.ui-dialog-titlebar-close').hide(); },
-		title: 'Working...'
-	});
 	
 	// sent the data to the controller to run bowtie2 and parse the results
 	function runBt2(si_rna, f_length, mm, db) {
@@ -955,20 +943,15 @@ jQuery(document).ready(function ($) {
 	}
 
 	function disable_ui() {
-		$('#working').dialog( {
-			height: 100,
-			width: 50,
-			modal: true,
-			autoOpen: false,
-			closeOnEscape: false,
-			open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog).hide(); $('.ui-dialog-titlebar-close').blur();},
-			title: 'Loading...'
-		});
-		$('#working').dialog("open");
+    jQuery('#myModal').modal({
+        show: true,
+        keyboard: false,
+        backdrop: 'static'
+      })    
 	}
 
 	function enable_ui() {
-		$('#working').dialog("close");
+    jQuery('#myModal').modal('hide');
 	}
 
 	function hide_ui() {
