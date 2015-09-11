@@ -1,7 +1,7 @@
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
 <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us<span class="caret"></span></a> -->
   <ul class="dropdown-menu">
-    <li><a href="http://solgenomics.net/about">About us</a></li>
+    <li><a href="http://solgenomics.net/about">About</a></li>
     <li><a href="http://solgenomics.net/contact/form">Contact</a></li>
     <li><a href="http://solgenomics.net/help/index.pl">Cite SGN</a></li>
     
