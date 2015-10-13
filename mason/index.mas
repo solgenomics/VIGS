@@ -9,24 +9,141 @@ $f_size => 0
 </%args>
 
 
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog modal-sm">
+
+<div class="modal fade" id="help_dialog_2" role="dialog">
+  <div class="modal-dialog">
+  
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Distribution of n-mers help</h4>
+      </div>
+      <div class="modal-body">
+        <ol class="list-group">
+          <li class="list-group-item">
+            N-mers mapping to the target/s are shown in blue and to off-targets in red. The yellow area highlights the region with the highest score using the selected parameters
+          </li>
+          <li class="list-group-item">
+            The bottom graph represents in red the score values along the sequence. The score value = 0 is indicated with a green line.
+            Below this line are represented the regions with more off-targets than targets, and the opposite when the score is above the green line.
+          </li>
+          <li class="list-group-item">
+            Expand graph button will display every n-mer fragment aligned over the query for each subject.
+          </li>
+          <li class="list-group-item">
+            Zoom button will zoom in/out the VIGS map representation.
+          </li>
+        </ol>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="help_dialog_3" role="dialog">
+  <div class="modal-dialog">
   
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">VIGS Running</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Best region help</h4>
       </div>
       <div class="modal-body">
-        <center>
-          <img src="/static/images/wheel.gif" />
-        </center>
+        <ol class="list-group">
+          <li class="list-group-item">
+            This section shows the best or the custom region sequence in FASTA format.
+          </li>
+          <li class="list-group-item">
+            The custom region will update as the grey selection rectangle is moved.
+          </li>
+        </ol>
       </div>
     </div>
     
   </div>
 </div>
 
+
+
+<div class="modal fade" id="help_dialog_4" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sequence overview help</h4>
+      </div>
+      <div class="modal-body">
+        <ol class="list-group">
+          <li class="list-group-item">
+            In this section is shown the query sequence, highlighting the best target region in yellow or the custom region in grey.
+          </li>
+          <li class="list-group-item">
+            The custom region will be updated as the grey selection rectangle is moved.
+          </li>
+        </ol>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="help_dialog_5" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Description of genes mapped help</h4>
+      </div>
+      <div class="modal-body">
+        <ol class="list-group">
+          <li class="list-group-item">
+            Number of n-mer matches and gene functional description are shown for each matched gene.
+          </li>
+          <li class="list-group-item">
+            The View link will open a draggable dialog with this information.
+          </li>
+        </ol>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="params_dialog" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Parameters used</h4>
+      </div>
+      <div class="modal-body">
+        <ol id ="parameter_list" class="list-group">
+        </ol>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+<& /modal_msgs.mas &>
 
 <script>
 	
@@ -53,6 +170,7 @@ $f_size => 0
       img_e.attr("src",'/static/images/collapser_minus.png');
     }
   }
+  
 </script>
 
 
@@ -76,6 +194,9 @@ $f_size => 0
     </label>
     <textarea class="form-control" id="sequence" name="sequence"></textarea>
   </div>
+
+
+
 
   <div class="form-inline" >
     <div class="form-group">
@@ -116,12 +237,14 @@ $f_size => 0
       		}
       	}
       </%perl>
-      </select>  &nbsp; <a href="http://solgenomics.net/contact/form"  title="send us an email to add other species" style="font-size:10px;"  target="_blank">Request other DBs</a>
+      </select>  &nbsp; <a href="http://solgenomics.net/contact/form" data-placement="right" data-toggle="tooltip" title="send us an email to add other species" style="font-size:10px;"  target="_blank">Request other DBs</a>
     </div>
   </div>
 	<br />
   <br />
   
+<div class="well" style="width:700px">
+
     <form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
         <span style="cursor:default" title="Insert a expression file in a tab-delimited format">Upload Expression file: </span>
       
@@ -132,45 +255,14 @@ $f_size => 0
         </div>
     </form>
   
-	<br />
-  <button type="button" class="btn btn-primary" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button>
-	<br />
-	<br />
-	</center>
-
-	<center>
-	<div class="subsection_bar">
-		<a class="collapser_link" href="javascript:folding_section('#usage_view','#tmp_img_usage');">
-      <img id="tmp_img_usage" class="sub_collapser_img" src="/static/images/collapser_plus.png"/>
-			Usage Help
-		</a>
-	</div>
-
-    <div id="usage_view" class="collapse center_section">
-      <p>
-        <b>Usage:</b><br />
-        1. Paste a <b>sequence</b> like in one of the examples:<br />
-        <span style="background-color:#DCDCDC;">&nbsp;&nbsp;>gene_ID<br />&nbsp;&nbsp;ATGGATCAGTCGGTGTTGGCGATCT&nbsp;&nbsp;<br />&nbsp;&nbsp;ACAGCTTGGCCAACTCCAGAAATTG&nbsp;&nbsp;</span><br />
-        &nbsp;&nbsp;or<br />
-        <span style="background-color:#DCDCDC;">&nbsp;&nbsp;ATGGATCAGTCGGTGTTGGCGATCT&nbsp;&nbsp;</span><br />
-        &nbsp;&nbsp;Or paste the <b>gene ID</b>:<br />
-        <span style="background-color:#DCDCDC;">&nbsp;&nbsp;Solyc10g047140.1.1&nbsp;&nbsp;</span><br />
-        2. Choose <b>n-mer size</b>, nucleotide stretch size in bp, used to identify targeted regions (18-24, Default=21)<br />
-        3. Choose <b>Fragment length</b>, desired VIGS fragment length in bp (100-Sequence length, Default=300)<br />
-        4. Choose <b>mismatches</b>, number of mismatches allowed in the alignment (0-2, Default=0)<br />
-        <!-- 4. Choose <b>mismatches</b>, number of mismatches allowed in the alignment (0-1, Default=0)<br /> -->
-        5. Choose <b>database</b><br />
-        6. Upload a <b>expression values file</b> (optional). It must be a tab delimited text file, with gene identifiers in the first column and a header in the first row:
-      </p>
-      <table style="background-color:#DCDCDC;width:280px">
-        <tr><td>gene_id</td><td>expr_val</td><td>p_val</td><td>...</td></tr>
-        <tr><td>Solyc10g047140.1.1</td><td>4.56</td><td>0.0001</td><td>...</td></tr>
-        <tr><td>Solyc01g000020.1.1</td><td>3.64</td><td>0.0032</td><td>...</td></tr>
-        <tr><td>...</td></tr>
-      </table>
-    </div>
   
-  </center>
+</div>
+  
+  <button type="button" class="btn btn-primary" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#usage_modal">Usage Help <span class="glyphicon glyphicon-question-sign"></span></button>
+  
+</center>
+
   
 </div>
 	
@@ -215,12 +307,13 @@ $f_size => 0
 			<img id="tmp_img_hide1" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Modify Parameters
 		</a>
-		<span class="pull-right">[<a id="help_dialog_1">Help</a>]</span>
+    <button type="button" class="btn btn-link pull-right" data-toggle="modal" data-target="#help_dialog_1" style="padding:0px">Help <span class="glyphicon glyphicon-question-sign"></span></button>
+    
 	</div>
 	
   <div id="hide1" class="collapse in">
-    <center>
-      <div id="score_p" style="text-align:'right';"></div>
+    <!-- <center> -->
+      <div id="score_p" class="well text-justify" style="width:900px;margin-top:10px;"></div>
       
       <table id="mod_param_table">
         <tr>
@@ -239,7 +332,7 @@ $f_size => 0
       
       <span id="no_results" style="color:red;"></span>
       <p style="color:red" id="cbr_p"></p>
-    </center>
+    <!-- </center> -->
   </div>
   
 <br>	
@@ -248,7 +341,8 @@ $f_size => 0
 			<img id="tmp_img_hide2" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Distribution of n-mers
 		</a>
-		<span class="pull-right">[<a id="help_dialog_2">Help</a>]</span>
+    <button type="button" class="btn btn-link pull-right" data-toggle="modal" data-target="#help_dialog_2" style="padding:0px">Help <span class="glyphicon glyphicon-question-sign"></span></button>
+    
 	</div>
 
   <div id="hide2" class="collapse in center_section">
@@ -259,9 +353,9 @@ $f_size => 0
           Your browser does not support the HTML5 canvas
         </canvas>
       </div>
-      <button id="collapse_btn" class="btn btn-primary" value="1">Expand Graph</button>
-      <button id="zoom" class="btn btn-primary" value="0">Zoom In</button>
-      <button id="params_dialog" class="btn btn-primary">Parameters Used</button>
+      <button id="collapse_btn" type="button" class="btn btn-primary" value="1">Expand Graph</button>
+      <button id="zoom" type="button" class="btn btn-primary" value="0">Zoom In</button>
+      <button id="parameters_button" type="button" class="btn btn-primary">Parameters Used</button>
     </center>
   </div>
 
@@ -271,7 +365,7 @@ $f_size => 0
 			<img id="tmp_img_hide3" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Predicted Construct
 		</a>
-		<span class="pull-right">[<a id="help_dialog_3">Help</a>]</span>
+    <button type="button" class="btn btn-link pull-right" data-toggle="modal" data-target="#help_dialog_3" style="padding:0px">Help <span class="glyphicon glyphicon-question-sign"></span></button>
 	</div>
 
   <div id="br_seq" class="collapse in" style="width:600px;">
@@ -285,7 +379,7 @@ $f_size => 0
 			<img id="tmp_img_hide4" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Sequence Overview
 		</a>
-		<span class="pull-right">[<a id="help_dialog_4">Help</a>]</span>
+    <button type="button" class="btn btn-link pull-right" data-toggle="modal" data-target="#help_dialog_4" style="padding:0px">Help <span class="glyphicon glyphicon-question-sign"></span></button>
 	</div>
 
 		<div id="hide4" class="collapse in center_section" style="width:700px;">
@@ -301,7 +395,7 @@ $f_size => 0
 			<img id="tmp_img_hide5" class="sub_collapser_img" src="/static/images/collapser_minus.png"/>
 			Description of matched genes
 		</a>
-		<span class="pull-right">[<a id="help_dialog_5">Help</a>]</span>
+    <button type="button" class="btn btn-link pull-right" data-toggle="modal" data-target="#help_dialog_5" style="padding:0px">Help <span class="glyphicon glyphicon-question-sign"></span></button>
 	</div>
 	
   <div id="hide5" class="collapse in center_section">

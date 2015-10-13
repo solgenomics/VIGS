@@ -1,13 +1,3 @@
-/* NOTE: SGN blue is #ccccff */
-/********************     GENERAL SITE STYLES     **********************/
-/*body {
-  color: black;
-  background-color: white;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 1.25;
-}
-*/
 
 html,
 body {
@@ -26,8 +16,6 @@ body {
 }
 
 #header {
-/*  background:#efefef;*/
-/*  padding:5px;*/
   height:50px;
 }
 
@@ -103,6 +91,7 @@ a:hover {
     position:relative;
     overflow: auto;
     align: left;
+    cursor:all-scroll;
 }
 
 .ui-dialog {
@@ -188,5 +177,9 @@ a.collapser_link:hover {
 
 #mod_param_table td {
   padding: 5px;
+}
+
+#mod_param_table label {
+  padding-top: 10px;
 }
 

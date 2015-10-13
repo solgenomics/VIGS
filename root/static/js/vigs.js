@@ -1,6 +1,8 @@
 var $j = jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
+  
+  $('[data-toggle="tooltip"]').tooltip(); 
 		
 	//safari_alert();
 	
@@ -98,96 +100,14 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	$('#params_dialog').click(function () {
-		
-		$('#params').html("&bull;&nbsp;<b>Fragment size: </b>"+$("#help_fsize").val()+"<br /> \
-		&bull;&nbsp;<b>n-mer: </b>"+$("#help_nmer").val()+"<br /> \
-		&bull;&nbsp;<b>Mismatches: </b>"+$("#help_mm").val()+"<br />\
-		&bull;&nbsp;<b>Database: </b>"+$("#db_name").val());
+  $('#parameters_button').click(function () {
+    $('#params_dialog').modal();
+    $('#parameter_list').html("<li class=\"list-group-item\"><b>Fragment size: </b>"+$("#help_fsize").val()+"</li>\
+      <li class=\"list-group-item\"><b>n-mer: </b>"+$("#help_nmer").val()+"</li>\
+      <li class=\"list-group-item\"><b>Mismatches: </b>"+$("#help_mm").val()+"</li>\
+      <li class=\"list-group-item\"><b>Database: </b>"+$("#db_name").val()+"</li>");
+  });
 
-		$('#params').dialog({
-			draggable:true,
-			resizable:false,
-			width:500,
-			closeOnEscape:true,
-			title: "Parameters used",
-		});
-	});
-
-	$('#help_dialog_1').click(function () {
-		
-		$('#help_dialog_tmp').html("&bull;&nbsp;The best target region score value indicates how good the yellow highlighted region is, taking into account the number of target and off-target n-mers. \
-			The closer to 100 the better is the value. In the same way, the custom region score indicates the value of the custom region, represented by the transparent grey rectangle.<br/> \
-			&bull;&nbsp;Set Custom Region button will activate a draggable and resizable transparent grey rectangle to manually select a custom region.<br/> \
-			&bull;&nbsp;Change button will recalculate the results using the new parameters chosen. In case of changing the n-mer size, the algorithm will run Bowtie 2 again, so this process could take a while.");
-
-		$('#help_dialog_tmp').dialog({
-			draggable:true,
-			resizable:false,
-			width:500,
-			closeOnEscape:true,
-			title: "Modify parameters help",
-		});
-	});
-
-	$('#help_dialog_2').click(function () {
-		
-		$('#help_dialog_tmp').html("&bull;&nbsp;N-mers mapping to the target/s are shown in blue and to off-targets in red. The yellow area highlights the region with the highest score using the selected parameters<br/> \
-			&bull;&nbsp;The bottom graph represents in red the score values along the sequence. The score value = 0 is indicated with a green line. \
-			Below this line are represented the regions with more off-targets than targets, and the opposite when the score is above the green line.<br/> \
-			&bull;&nbsp;Expand graph button will display every n-mer fragment aligned over the query for each subject.<br /> \
-			&bull;&nbsp;Zoom button will zoom in/out the VIGS map representation.");
-
-		$('#help_dialog_tmp').dialog({
-			draggable:true,
-			resizable:false,
-			width:500,
-			closeOnEscape:true,
-			title: "Distribution of n-mers help",
-		});
-	});
-
-	$('#help_dialog_3').click(function () {
-		
-		$('#help_dialog_tmp').html("&bull;&nbsp;This section shows the best or the custom region sequence in FASTA format.<br/> \
-			&bull;&nbsp;The custom region will update as the grey selection rectangle is moved.");
-
-		$('#help_dialog_tmp').dialog({
-			draggable:true,
-			resizable:false,
-			width:500,
-			closeOnEscape:true,
-			title: "Best region help",
-		});
-	});
-
-	$('#help_dialog_4').click(function () {
-		
-		$('#help_dialog_tmp').html("&bull;&nbsp;In this section is shown the query sequence, highlighting the best target region in yellow or the custom region in grey.<br/> \
-			&bull;&nbsp;The custom region will be updated as the grey selection rectangle is moved.");
-
-		$('#help_dialog_tmp').dialog({
-			draggable:true,
-			resizable:false,
-			width:500,
-			closeOnEscape:true,
-			title: "Sequence overview help",
-		});
-	});
-
-	$('#help_dialog_5').click(function () {
-		
-		$('#help_dialog_tmp').html("&bull;&nbsp;Number of n-mer matches and gene functional description are shown for each matched gene.<br/> \
-			&bull;&nbsp;The View link will open a draggable dialog with this information.");
-
-		$('#help_dialog_tmp').dialog({
-			draggable:true,
-			resizable:false,
-			width:500,
-			closeOnEscape:true,
-			title: "Description of genes mapped help",
-		});
-	});
 
 	$('#clear_form').click(function () {
 		$("#sequence").val(null);
@@ -962,17 +882,7 @@ jQuery(document).ready(function ($) {
     
     img.src = '/static/images/collapser_plus.png'
 		
-    // var img = document.getElementById('tmp_img_res');
-		
 		$('#res_bar').css("display","block");
-    // $('#results_section').collapse("show");
-    
-    // img.src = '/static/images/collapser_minus.png'
-		
-		// Effects.swapElements('vigs_input_offswitch', 'vigs_input_onswitch');
-		// Effects.hideElement('vigs_input_content');
-		// Effects.swapElements('vigs_usage_offswitch', 'vigs_usage_onswitch');
-		// Effects.hideElement('vigs_usage_content');
 	}
 	
 });
