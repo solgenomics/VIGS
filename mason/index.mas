@@ -178,8 +178,8 @@ $f_size => 0
 	</div>
 	
   <div id="hide1" class="collapse in">
-    <!-- <center> -->
-      <div id="score_p" class="well text-justify" style="width:900px;margin-top:10px;"></div>
+    <center>
+      <div id="score_p" class="well" style="width:900px;margin-top:10px;"></div>
       
       <table id="mod_param_table">
         <tr>
@@ -198,7 +198,7 @@ $f_size => 0
       
       <span id="no_results" style="color:red;"></span>
       <p style="color:red" id="cbr_p"></p>
-    <!-- </center> -->
+    </center>
   </div>
   
 <br>	
