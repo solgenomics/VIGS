@@ -357,7 +357,7 @@ sub hash2param {
 }
 
 
-sub upload_expression_file_for_vigs : Path('/ajax/upload_expression_file') : ActionClass('REST') { }
+sub upload_expression_file_for_vigs : Path('/vigs/run_vigs') : ActionClass('REST') { }
 
 sub upload_expression_file_for_vigs_POST : Args(0) {
     my ($self, $c) = @_;

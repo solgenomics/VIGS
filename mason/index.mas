@@ -111,7 +111,7 @@ $f_size => 0
   
 <div class="well" style="width:700px">
 
-    <form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/ajax/upload_expression_file">
+    <form method="post" enctype="multipart/form-data" encoding="multipart/form-data" id="upload_expression_form" name="upload_expression_form" action="/vigs/run_vigs">
         <span style="cursor:default" title="Insert a expression file in a tab-delimited format">Upload Expression file: </span>
       
         <div class="input-group text-center">
