@@ -58,6 +58,7 @@ $f_size => 0
     <label for="comment">
       Sequence:<span id="example"> (<a class="blue_text" onclick="example()" style="cursor:pointer">example sequence</a>)</span>
     </label>
+    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#usage_modal">Usage Help <span class="glyphicon glyphicon-question-sign"></span></button>
     <textarea class="form-control" id="sequence" name="sequence"></textarea>
   </div>
 
@@ -124,8 +125,9 @@ $f_size => 0
   
 </div>
   
-  <button type="button" class="btn btn-primary" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button>
-  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#usage_modal">Usage Help <span class="glyphicon glyphicon-question-sign"></span></button>
+  <button type="button" class="btn btn-primary" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button><br>
+  <a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" class="btn btn-link">See article about the VIGS Tool</a>
+  <!-- <button type="button" class="btn btn-link" data-toggle="modal" data-target="#usage_modal">Usage Help <span class="glyphicon glyphicon-question-sign"></span></button> -->
   
 </center>
 
