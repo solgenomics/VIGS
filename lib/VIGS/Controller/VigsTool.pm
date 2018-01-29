@@ -8,7 +8,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 
 # this function read the database files (Bowtie2) and
 # send the list of databases to the view input.mas
-sub input :Path('/vigs')  :Args(0) { 
+sub input :Path('/')  :Args(0) { 
 	my ($self, $c) = @_;
 
 	# get databases path from the configuration file
