@@ -795,7 +795,7 @@ jQuery(document).ready(function ($) {
 			}
 
 		} else {
-			$("#cbr_p").html("Values must be between 1 and "+seq_length+", getting a sequence not shorter than 100 bp!");
+			$("#cbr_p").html("Values must be between 1 and "+seq_length+", getting a sequence not shorter than 10 bp!");
 		}
 	}
 
@@ -848,8 +848,8 @@ jQuery(document).ready(function ($) {
 			$("#coverage_val").val(t_num);
 			
 			//check values before recalculate
-			if (!f_size || +f_size < 100 || +f_size > +seq_length) {
-				alert("Wrong fragment size ("+f_size+"), it must be 100 bp or higher, and lower than sequence length");
+			if (!f_size || +f_size < 10 || +f_size > +seq_length) {
+				alert("Wrong fragment size ("+f_size+"), it must be 10 bp or higher, and lower than sequence length");
 			} else {
 				disable_ui();
 				getResults(0, bt2_file, n_mer, f_size, align_mm, t_num, db, expr_f);

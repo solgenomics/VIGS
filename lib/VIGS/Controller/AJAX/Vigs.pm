@@ -103,8 +103,8 @@ sub run_bowtie2 :Path('/vigs/result') :Args(0) {
     }
     elsif (length($sequence) < $fragment_size) {
 		push (@errors, "n-mer size must be lower or equal to sequence length.\n");
-    } elsif (!$seq_fragment || $seq_fragment < 100 || $seq_fragment > length($sequence)) {
-		push (@errors, "Wrong fragment size ($seq_fragment), it must be higher than 100 bp and lower than sequence length\n");
+    } elsif (!$seq_fragment || $seq_fragment < 10 || $seq_fragment > length($sequence)) {
+		push (@errors, "Wrong fragment size ($seq_fragment), it must be higher than 10 bp and lower than sequence length\n");
     }
 
 
