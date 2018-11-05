@@ -1,11 +1,11 @@
 var $j = jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
-  
-  $('[data-toggle="tooltip"]').tooltip(); 
-		
+
+  $('[data-toggle="tooltip"]').tooltip();
+
 	//safari_alert();
-	
+
 	var score_array;
 	var seq;
 	var seq_length;
@@ -20,14 +20,14 @@ jQuery(document).ready(function ($) {
 	var temp_file;
 	var n_mer;
 	var si_rna;
-	
+
 	//start the tool when click on Run VIGS Analysis
 	$('#upload_expression_file').click(function () {
-		
+
 		//get the expression file from the web input form
 		expr_f = $('#expression_file').val();
 		$("#region_square").css("height","0px");
-		
+
 		//submit the form
 		$("#upload_expression_form").submit();
   });
@@ -43,14 +43,14 @@ jQuery(document).ready(function ($) {
 			}
 			if (response.success) {
 				expr_f = response.expr_file;
-				
+
 				//get the arguments from the HTML elements
 				seq = $("#sequence").val();
 				si_rna = $("#si_rna").val();
 				f_length = $("#f_length").val();
 				mm = $("#mm").val();
 				db = $("#bt2_db").val();
-				
+
 				//Run Bowtie2
 				runBt2(si_rna, f_length, mm, db);
 			}
@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
 	$('#region_square').mouseup(function () {
 		getSquareCoords(score_array,best_seq,seq);
 	});
-        
+
 	$('#open_descriptions_dialog').click(function () {
 		$('#dialog_info').replaceWith($('#target_info').clone());
 
@@ -116,11 +116,11 @@ jQuery(document).ready(function ($) {
 		$("#mm").val(0);
 		$("#expression_file").val(null);
 	});
-	
+
 	// sent the data to the controller to run bowtie2 and parse the results
 	function runBt2(si_rna, f_length, mm, db) {
 		var db_name;
-		
+
 		$("#no_results").html("");
 		// alert("seq: "+seq.length+", si_rna: "+si_rna+", f_length: "+f_length+", mm: "+mm+", db: "+db+", expr_file: "+expr_file);
 		$.ajax({
@@ -133,18 +133,18 @@ jQuery(document).ready(function ($) {
 				disable_ui();
 			},
 			success: function(response) {
-				if (response.error) { 
+				if (response.error) {
 					alert("ERROR: "+response.error);
 					enable_ui();
 				} else {
 					db_name = response.db_name;
 					bt2_file = response.jobid;
-					
+
 					$("#help_fsize").val(f_length);
 					$("#help_nmer").val(si_rna);
 					$("#help_mm").val(mm);
 					$("#db_name").val(db_name);
-					
+
 					getResults(1, bt2_file, si_rna, f_length, mm, 0, db, expr_f);
 				}
 			},
@@ -158,7 +158,7 @@ jQuery(document).ready(function ($) {
 
 
 	function getResults(status, bt2_res, si_rna, f_length, mm, coverage, db, expr_file) {
-		
+
 		var t_info = "<tr><th>Gene</th><th>Matches</th><th>Functional Description</th></tr>";
 		$("#no_results").html("");
 
@@ -172,12 +172,12 @@ jQuery(document).ready(function ($) {
 				enable_ui();
 				hide_ui();
 			},
-			success: function(response) { 
-				if (response.error) { 
+			success: function(response) {
+				if (response.error) {
 					alert("ERROR: "+response.error);
 					enable_ui();
 				} else {
-					
+
 					//assign values to global variables
 					score_array = response.all_scores;
 					best_seq = response.best_seq;
@@ -190,14 +190,14 @@ jQuery(document).ready(function ($) {
 					coverage = response.coverage;
 					ids = response.ids;
 					m_aoa = response.matches_aoa;
-					
+
 					$("#score_p").html("<b>Best target region score:</b> "+best_score+" &nbsp;&nbsp;(-&infin;&mdash;100)<br />");
 					$("#t_num").val(coverage);
 
 					if (+response.score < 0) {
 						$("#no_results").html("Note: The score value is very low!. Increasing the number of targets or the n-mer length, or decreasing the mismatches the score value will increase");
 					}
-					
+
 					//show result sections
 					$(".subsection_bar").css("display","");
           // $("#hide1").css("display","block");
@@ -253,7 +253,7 @@ jQuery(document).ready(function ($) {
           // $("#hide2").css("display","");
           // $("#hide3").css("display","");
 					$("#results_section").css("display","");
-					
+
 					$("#help_fsize").val(f_length);
 					$("#help_mm").val(mm);
 				}
@@ -349,8 +349,8 @@ jQuery(document).ready(function ($) {
 			ctx.fillText(ids_aoa[t][0],5,off_set_array[t]+17);
 			ctx.stroke();
 		}
-		printScoreGraph(collapsed,zoom,score_array,ids);    
-	}  
+		printScoreGraph(collapsed,zoom,score_array,ids);
+	}
 
 
 	function printSquares(collapsed,zoom,ids,m_aoa) {
@@ -423,13 +423,13 @@ jQuery(document).ready(function ($) {
 				if (!collapsed) {
 					coord_y = off_set + row*4;
 
-					//print rectangles		
+					//print rectangles
 					ctx.beginPath();
 					ctx.rect(m_start,coord_y,m_width,4);
 					ctx.fill();
 					ctx.stroke();
 				} else {
-					
+
 					if (collapsed_start == 0) {
 						collapsed_start = +coord[0];
 					}
@@ -438,7 +438,7 @@ jQuery(document).ready(function ($) {
 					} else {
 						coord_y = off_set; //to collapse all rectangles of the track
 						if (collapsed_end == 9999) {collapsed_end = prev_match_end;}
-						var collapsed_width = (+collapsed_end - +collapsed_start + 1)*xscale;		      
+						var collapsed_width = (+collapsed_end - +collapsed_start + 1)*xscale;
 
 						//print rectangles
 						ctx.beginPath();
@@ -457,14 +457,14 @@ jQuery(document).ready(function ($) {
 			}
 
 			if (!collapsed) {
-				var track_height = (max_row_num*4)+after_block; 
+				var track_height = (max_row_num*4)+after_block;
 				off_set += track_height; //add space for next track
 			} else {
 				if (collapsed_end == 9999) {collapsed_end = prev_match_end;}
 				coord_y = off_set; //to collapse all rectangles of the track
 				var collapsed_width = (+collapsed_end - +collapsed_start + 1)*xscale;
 
-				//print rectangles		
+				//print rectangles
 				ctx.beginPath();
 				ctx.rect(collapsed_start*xscale,coord_y,collapsed_width,4);
 				ctx.fill();
@@ -522,7 +522,7 @@ jQuery(document).ready(function ($) {
 		ctx.lineTo(img_width,(img_h+26));
 		ctx.stroke();
 
-		if (score_array) { 
+		if (score_array) {
 			ctx.beginPath();
 			ctx.moveTo(0,+img_h+25);
 			ctx.strokeStyle='rgb(255,0,0)';
@@ -728,7 +728,7 @@ jQuery(document).ready(function ($) {
 		var fragment_length = (+end - +start + 1);
 
 		if (coverage > 0 && fragment_length > 0) {
-			var final_score = ((custom_score*100/fragment_length)/coverage).toFixed(2); 
+			var final_score = ((custom_score*100/fragment_length)/coverage).toFixed(2);
 			// var final_score = (custom_score*100/+si_rna/fragment_length/coverage).toFixed(2); //using coverage
 			$("#score_p").html("<b>Best target region score:</b> "+best_score+" &nbsp;&nbsp; <b> Custom region score: </b>"+final_score+" &nbsp;&nbsp; (-&infin;&mdash;100)");
 		}
@@ -755,7 +755,7 @@ jQuery(document).ready(function ($) {
 		if (seq_length < img_width) {document.getElementById("seq_map").style.width=""+seq_length+"px";}
 
 
-		if ((cbr_start > 0) && (cbr_end <= seq_length) && (cbr_end >= cbr_start+99)) {
+		if ((cbr_start > 0) && (cbr_end <= seq_length) && (cbr_end >= cbr_start+9)) {
 			var cbr_left = Math.round((+cbr_start-1)*xscale);
 			var cbr_width = ((+cbr_end - +cbr_start +1)*xscale);
 
@@ -780,14 +780,14 @@ jQuery(document).ready(function ($) {
 				containment:map_el,
 				cursor: "move"
 			});
-			
+
 			$("#cbr_p").html("");
 			var fragment = (+cbr_end - +cbr_start +1);
 			$("#f_size").val(fragment);
 
 			hilite_sequence(cbr_start,cbr_end,1);
-		
-		
+
+
 			printCustomSeq(best_seq,seq);
 
 			if (score_array) {
@@ -801,7 +801,7 @@ jQuery(document).ready(function ($) {
 
 
 	function changeTargets(bt2_file,score_array,seq,best_seq,expr_f,ids,m_aoa) {
-		
+
 		var t_num = $("#t_num").val();
 		var coverage = $("#coverage_val").val();
 		var f_size = $("#f_size").val();
@@ -813,7 +813,7 @@ jQuery(document).ready(function ($) {
 		var db = $("#bt2_db").val();
 		var expr_msg;
 		var seq_length = $("#seq_length").val();
-		
+
 		if (n_mer != si_rna) {
 			$("#f_length").val(f_size);
 			$("#mm").val(align_mm);
@@ -821,7 +821,7 @@ jQuery(document).ready(function ($) {
 			si_rna = n_mer;
 			$("#coverage_val").val(t_num);
 			$("#region_square").css("height","0px");
-			
+
 			//check values before recalculate
 			if (+n_mer >= 18 && +n_mer <= 30) {
 				disable_ui();
@@ -833,7 +833,7 @@ jQuery(document).ready(function ($) {
 			$("#f_length").val(f_size);
 			$("#mm").val(align_mm);
 			$("#coverage_val").val(t_num);
-			
+
 			// if (!align_mm || +align_mm < 0 || +align_mm > 1) {
 			if (!align_mm || +align_mm < 0 || +align_mm > 2) {
 				alert("miss-match value ("+align_mm+") must be between 0-2");
@@ -846,7 +846,7 @@ jQuery(document).ready(function ($) {
 		} else if (t_num != coverage || f_size != f_length) {
 			$("#f_length").val(f_size);
 			$("#coverage_val").val(t_num);
-			
+
 			//check values before recalculate
 			if (!f_size || +f_size < 10 || +f_size > +seq_length) {
 				alert("Wrong fragment size ("+f_size+"), it must be 10 bp or higher, and lower than sequence length");
@@ -867,7 +867,7 @@ jQuery(document).ready(function ($) {
         show: true,
         keyboard: false,
         backdrop: 'static'
-      })    
+      })
 	}
 
 	function enable_ui() {
@@ -876,14 +876,13 @@ jQuery(document).ready(function ($) {
 
 	function hide_ui() {
 		$("#input_collapser").css("display","block");
-    
+
     var img = document.getElementById('tmp_img_input');
     $('#input_view').collapse("hide");
-    
+
     img.src = '/static/images/collapser_plus.png'
-		
+
 		$('#res_bar').css("display","block");
 	}
-	
-});
 
+});
