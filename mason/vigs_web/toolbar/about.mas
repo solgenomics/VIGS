@@ -1,16 +1,16 @@
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About</a>
 <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us<span class="caret"></span></a> -->
   <ul class="dropdown-menu">
-    <li><a href="http://solgenomics.net/about">About</a></li>
-    <li><a href="http://solgenomics.net/contact/form">Contact</a></li>
-    <li><a href="http://solgenomics.net/help/index.pl">Cite SGN</a></li>
+    <li><a href="https://solgenomics.net/about">About</a></li>
+    <li><a href="https://solgenomics.net/contact/form">Contact</a></li>
+    <li><a href="https://solgenomics.net/help/index.pl">Cite SGN</a></li>
     
     <li role="separator" class="divider"></li>
     
-    <li><a href="http://solgenomics.net/help/index.pl">Help</a></li>
-    <li><a href="http://solgenomics.net/help/faq.pl">FAQ</a></li>
-    <li><a href="http://solgenomics.net/phenome">Become SGN Editor</a></li>
-    <li><a href="http://solgenomics.net/forum/topics.pl">Forum</a></li>
+    <li><a href="https://solgenomics.net/help/index.pl">Help</a></li>
+    <li><a href="https://solgenomics.net/help/faq.pl">FAQ</a></li>
+    <li><a href="https://solgenomics.net/phenome">Become SGN Editor</a></li>
+    <li><a href="https://solgenomics.net/forum/topics.pl">Forum</a></li>
     
     <li role="separator" class="divider"></li>
     

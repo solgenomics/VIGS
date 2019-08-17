@@ -104,7 +104,7 @@ $f_size => 0
       		}
       	}
       </%perl>
-      </select>  &nbsp; <a href="http://solgenomics.net/contact/form" data-placement="right" data-toggle="tooltip" title="send us an email to add other species" style="font-size:10px;"  target="_blank">Request other DBs</a>
+      </select>  &nbsp; <a href="https://solgenomics.net/contact/form" data-placement="right" data-toggle="tooltip" title="send us an email to add other species" style="font-size:10px;"  target="_blank">Request other DBs</a>
     </div>
   </div>
 	<br />
@@ -126,7 +126,7 @@ $f_size => 0
 </div>
   
   <button type="button" class="btn btn-primary" id="upload_expression_file" value="Run VIGS Analysis">Run VIGS Analysis</button><br>
-  <a href="http://www.sciencedirect.com/science/article/pii/S1674205214000537#" class="btn btn-link">See article about the VIGS Tool</a>
+  <a href="https://www.sciencedirect.com/science/article/pii/S1674205214000537#" class="btn btn-link">See article about the VIGS Tool</a>
   <!-- <button type="button" class="btn btn-link" data-toggle="modal" data-target="#usage_modal">Usage Help <span class="glyphicon glyphicon-question-sign"></span></button> -->
   
 </center>

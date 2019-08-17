@@ -2,38 +2,38 @@
 <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools<span class="caret"></span></a> -->
   <ul class="dropdown-menu">
     <li class="dropdown-header">Sequence Analysis</li>
-    <li><a href="http://solgenomics.net/tools/blast/">BLAST</a></li>
-    <li><a href="http://vigs.solgenomics.net/">VIGS Tool</a></li>
-    <li><a href="http://solgenomics.net/tools/align_viewer/">Alignment Analyzer</a></li>
-    <li><a href="http://solgenomics.net/tools/tree_browser/">Tree Browser</a></li>
+    <li><a href="https://solgenomics.net/tools/blast/">BLAST</a></li>
+    <li><a href="https://vigs.solgenomics.net/">VIGS Tool</a></li>
+    <li><a href="https://solgenomics.net/tools/align_viewer/">Alignment Analyzer</a></li>
+    <li><a href="https://solgenomics.net/tools/tree_browser/">Tree Browser</a></li>
 
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Mapping</li>
-    <li><a href="http://solgenomics.net/jbrowse/">Genome Browser (Jbrowse)</a></li>
-    <li><a href="http://solgenomics.net/cview/view_chromosome.pl?show_offsets=1&amp;show_ruler=1&amp;show_offsets=1">Comparative Map Viewer</a></li>
-    <li><a href="http://solgenomics.net/tools/caps_designer/caps_input.pl">CAPS Designer</a></li>
-    <li><a href="http://solgenomics.net/search/phenotypes/qtl">solQTL: QTL Mapping</a></li>
+    <li><a href="https://solgenomics.net/jbrowse/">Genome Browser (Jbrowse)</a></li>
+    <li><a href="https://solgenomics.net/cview/view_chromosome.pl?show_offsets=1&amp;show_ruler=1&amp;show_offsets=1">Comparative Map Viewer</a></li>
+    <li><a href="https://solgenomics.net/tools/caps_designer/caps_input.pl">CAPS Designer</a></li>
+    <li><a href="https://solgenomics.net/search/phenotypes/qtl">solQTL: QTL Mapping</a></li>
 
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Molecular Biology</li>
-    <li><a href="http://solgenomics.net/tools/insilicopcr">In Silico PCR</a></li>
-    <li><a href="http://solgenomics.net/ted">Tomato Expression Database (TED)</a></li>
+    <li><a href="https://solgenomics.net/tools/insilicopcr">In Silico PCR</a></li>
+    <li><a href="https://solgenomics.net/ted">Tomato Expression Database (TED)</a></li>
 
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Systems Biology</li>
-    <li><a href="http://solgenomics.net/tools/solcyc/">SolCyc Biochemical Pathways</a></li>
-    <li><a href="http://solgenomics.net/tools/interactomics">Coffee Interactomic Data</a></li>
-    <li><a href="http://solgenomics.net/tools/onto/">SGN Ontology Browser</a></li>
+    <li><a href="https://solgenomics.net/tools/solcyc/">SolCyc Biochemical Pathways</a></li>
+    <li><a href="https://solgenomics.net/tools/interactomics">Coffee Interactomic Data</a></li>
+    <li><a href="https://solgenomics.net/tools/onto/">SGN Ontology Browser</a></li>
 
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Breeder Tools</li>
-    <li><a href="http://solgenomics.net/breeders">Breeders Toolbox</a></li>
+    <li><a href="https://solgenomics.net/breeders">Breeders Toolbox</a></li>
 
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Bulk Query</li>
-    <li><a href="http://solgenomics.net/tools/bulk?mode=ftp">FTP Site</a></li>
-    <li><a href="http://solgenomics.net/tools/bulk?mode=genes">Download Gene Sequences</a></li>
-    <li><a href="http://solgenomics.net/tools/bulk">Clones, Arrays, Unigenes and BACs</a></li>
-    <li><a href="http://solgenomics.net/tools/bulk?mode=converter">Unigene Converter</a></li>
+    <li><a href="https://solgenomics.net/tools/bulk?mode=ftp">FTP Site</a></li>
+    <li><a href="https://solgenomics.net/tools/bulk?mode=genes">Download Gene Sequences</a></li>
+    <li><a href="https://solgenomics.net/tools/bulk">Clones, Arrays, Unigenes and BACs</a></li>
+    <li><a href="https://solgenomics.net/tools/bulk?mode=converter">Unigene Converter</a></li>
   </ul>
 </li>

@@ -1,29 +1,29 @@
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Search</a>
   <ul class="dropdown-menu">
-    <li><a href="http://solgenomics.net/search/organisms">Organisms</a></li>
-    <li><a href="http://solgenomics.net/search/locus">Genes</a></li>
-    <li><a href="http://solgenomics.net/search/features">Genome features</a></li>
+    <li><a href="https://solgenomics.net/search/organisms">Organisms</a></li>
+    <li><a href="https://solgenomics.net/search/locus">Genes</a></li>
+    <li><a href="https://solgenomics.net/search/features">Genome features</a></li>
 
     <li role="separator" class="divider"></li>
-    <li><a href="http://solgenomics.net/search/expression">Expression</a></li>
-    <li><a href="http://solgenomics.net/search/stocks">Phenotypes</a></li>
-    <li><a href="http://solgenomics.net/search/phenotypes/qtl">QTLs</a></li>
-    <li><a href="http://solgenomics.net/search/markers">Markers</a></li>
+    <li><a href="https://solgenomics.net/search/expression">Expression</a></li>
+    <li><a href="https://solgenomics.net/search/stocks">Phenotypes</a></li>
+    <li><a href="https://solgenomics.net/search/phenotypes/qtl">QTLs</a></li>
+    <li><a href="https://solgenomics.net/search/markers">Markers</a></li>
 
     <li role="separator" class="divider"></li>
-    <li><a href="http://solgenomics.net/search/genomic/clones">BACs</a></li>
-    <li><a href="http://solgenomics.net/search/transcripts/unigene">Unigenes</a></li>
-    <li><a href="http://solgenomics.net/search/transcripts/est">ESTs and libraries</a></li>
-    <li><a href="http://solgenomics.net/search/family">Gene Families</a></li>
+    <li><a href="https://solgenomics.net/search/genomic/clones">BACs</a></li>
+    <li><a href="https://solgenomics.net/search/transcripts/unigene">Unigenes</a></li>
+    <li><a href="https://solgenomics.net/search/transcripts/est">ESTs and libraries</a></li>
+    <li><a href="https://solgenomics.net/search/family">Gene Families</a></li>
 
     <li role="separator" class="divider"></li>
-    <li><a href="http://solgenomics.net/insitu/">Insitu database</a></li>
-    <li><a href="http://solgenomics.net/search/images">Images</a></li>
-    <li><a href="http://solgenomics.net/search/people">People</a></li>
-    <li><a href="http://solgenomics.net/help/faq.pl">FAQ</a></li>
+    <li><a href="https://solgenomics.net/insitu/">Insitu database</a></li>
+    <li><a href="https://solgenomics.net/search/images">Images</a></li>
+    <li><a href="https://solgenomics.net/search/people">People</a></li>
+    <li><a href="https://solgenomics.net/help/faq.pl">FAQ</a></li>
 
     <li role="separator" class="divider"></li>
-    <li><a href="http://solgenomics.net/search">Advanced Search</a></li>
+    <li><a href="https://solgenomics.net/search">Advanced Search</a></li>
 
   </ul>
 </li>
