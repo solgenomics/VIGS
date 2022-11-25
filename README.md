@@ -5,7 +5,7 @@ Stand Alone version of SGN VIGS Tool
 
 Developed on a Catalyst framework
 
-## To add a VIGS dataset, use the following commands:
+### To add a VIGS dataset, use the following commands:
 
 ```
 unzip GCA_003287315.1.zip
@@ -20,3 +20,8 @@ sudo makeblastdb -in Phytophthora_cactorum_GCA_003287315.1_cds.fa -dbtype nucl -
 sudo bowtie-build -f /export/prod/blast/databases/current/vigs/Phytophthora_cactorum_GCA_003287315.1_cds.fa /export/prod/blast/databases/current/vigs/Phytophthora_cactorum_GCA_003287315.1_cds
 ```
 
+### To start the server
+
+use the ```start_vigs.sh``` script in the ```VIGS``` folder
+
+The server needs to be stop by killing the ```vigs_server.pl``` process.
