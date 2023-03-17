@@ -35,8 +35,16 @@ our $VERSION = '0.01';
 # with an external configuration file acting as an override for
 # local deployment.
 
+# on docker, the catalyst root is somehow set wrong, not sure why
+# this should fix it
+#
+my $home = `pwd`;
+chomp($home);
+print STDERR "DETERMINED HOME $home\n";
+
 __PACKAGE__->config(
     name => 'VIGS',
+    home => $home,
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
     enable_catalyst_header => 1, # Send X-Catalyst header
