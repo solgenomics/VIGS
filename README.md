@@ -14,7 +14,6 @@ in emacs, replace the string >lcl| with > , if present
 (otherwise, fastacmd will not work correctly)
 
 Copy the dataset to the correct location, where the VIGS tool can see it. If using the docker, this target directory has to be mounted into the docker at ```/home/vigs_sequence_files/```.
-
 ```
 sudo cp ncbi_dataset/data/GCA_003287315.1/cds_from_genomic.fna /export/prod/blast/databases/current/vigs/Phytophthora_cactorum_GCA_003287315.1_cds.fa
 ```
@@ -24,7 +23,6 @@ docker exec -it vigs_tool bash
 cd /home/vigs_sequence_files/
 
 sudo makeblastdb -in Phytophthora_cactorum_GCA_003287315.1_cds.fa -dbtype nucl -out Phytophthora_cactorum_GCA_003287315.1_cds -parse_seqids
-
 ```
 Index the file for use with bowtie2:
 ```
@@ -48,20 +46,22 @@ In Debian, Ubuntu, PoP_OS, etc., install git using ``` apt install git ```. On o
 To install the vigs_tool system, clone the git repository that contains the example ```docker-compose.yml``` file.
 ```
 git clone https://github.com/solgenomics/VIGS
-
 ```
 Run the vigs_tool from within the VIGS folder using:
 ```
 docker compose up -d
-
 ```
 
 By default, the VIGS interface will be available at ```localhost:8088```. To make the VIGS tool available through secure http, an ```nginx``` front-end is recommended, using an https certificate by [Let's encrypt](https://letsencrypt.org/).
 
 
 
-### To start the server
+### To start the server manually
 
-use the ```start_vigs.sh``` script in the ```VIGS``` folder
+If you install the system manually, you can start the server using the start script in the ```VIGS/``` directory. You can also use this script in the docker.
+
+```
+bash start_vigs.sh
+```
 
 The server needs to be stop by killing the ```vigs_server.pl``` process.
