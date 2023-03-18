@@ -9,7 +9,6 @@ Developed on a Catalyst framework
 
 ```
 unzip GCA_003287315.1.zip
-
 ```
 in emacs, replace the string >lcl| with > , if present
 (otherwise, fastacmd will not work correctly)
@@ -38,7 +37,7 @@ A docker build for the VIGS tool is available from docker hub and is the recomme
 
 ### Install docker on your system
 
-To install the VIGS tool, first install docker. Refer to the [docker installation instructions on the Docker site)](https://docs.docker.com/get-docker/). 
+To install the VIGS tool, first install docker. Refer to the [docker installation instructions on the Docker site](https://docs.docker.com/get-docker/). 
 
 ### Install ```git``` on your system
 
