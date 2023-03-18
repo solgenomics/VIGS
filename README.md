@@ -38,7 +38,7 @@ A docker build for the VIGS tool is available from docker hub and is the recomme
 
 ### Install docker on your system
 
-To install the VIGS tool, first install docker. Refer to the (docker installation instructions on the Docker site)[https://docs.docker.com/get-docker/] 
+To install the VIGS tool, first install docker. Refer to the [docker installation instructions on the Docker site)](https://docs.docker.com/get-docker/). 
 
 ### Install ```git``` on your system
 
@@ -57,7 +57,7 @@ docker compose up -d
 
 ```
 
-By default, the VIGS interface will be available at ```localhost:8088```. To make the VIGS tool available through secure http, an ```nginx``` front-end is recommended, using an https certificate by (Let's encrypt)[https://letsencrypt.org/].
+By default, the VIGS interface will be available at ```localhost:8088```. To make the VIGS tool available through secure http, an ```nginx``` front-end is recommended, using an https certificate by [Let's encrypt](https://letsencrypt.org/).
 
 
 
