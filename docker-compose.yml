@@ -1,6 +1,8 @@
 
 services:
   vigs_tool:
+    ports:
+      - 8088:8088
     volumes:
       - type: bind
         source: /home/production/vigs_sequences_files
