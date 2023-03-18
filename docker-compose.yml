@@ -1,0 +1,9 @@
+
+services:
+  vigs_tool:
+    volumes:
+      - type: bind
+        source: /home/production/vigs_sequences_files
+        target: /home/vigs_sequence_files
+    container_name: vigs_tool
+    image: breedbase/vigs_tool:v0.01
