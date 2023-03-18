@@ -20,6 +20,35 @@ sudo makeblastdb -in Phytophthora_cactorum_GCA_003287315.1_cds.fa -dbtype nucl -
 sudo bowtie-build -f /export/prod/blast/databases/current/vigs/Phytophthora_cactorum_GCA_003287315.1_cds.fa /export/prod/blast/databases/current/vigs/Phytophthora_cactorum_GCA_003287315.1_cds
 ```
 
+## Installation
+
+A docker build for the VIGS tool is available from docker hub and is the recommended installation method.
+
+### Install docker on your system
+
+To install the VIGS tool, first install docker. Refer to the (docker installation instructions on the Docker site)[https://docs.docker.com/get-docker/] 
+
+### Install ```git``` on your system
+
+In Debian, Ubuntu, PoP_OS, etc., install git using ``` apt install git ```. On other platforms, use the respective packaging systems to install ```git```.
+
+### Install the vigs_tool docker
+
+To install the vigs_tool system, clone the git repository that contains the example ```docker-compose.yml``` file.
+```
+git clone https://github.com/solgenomics/VIGS
+
+```
+Run the vigs_tool from within the VIGS folder using:
+```
+docker compose up -d
+
+```
+
+By default, the VIGS interface will be available at ```localhost:8088```. To make the VIGS tool available through secure http, an ```nginx``` front-end is recommended, using an https certificate by (Let's encrypt)[https://letsencrypt.org/].
+
+
+
 ### To start the server
 
 use the ```start_vigs.sh``` script in the ```VIGS``` folder
