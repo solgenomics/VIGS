@@ -9,7 +9,7 @@ RUN apt-get update -y
 
 RUN apt-get install -y apt-utils build-essential
 
-RUN apt-get install -y less procps host lynx ncbi-blast+ ncbi-blast+-legacy cpanminus bioperl bioperl-run libcatalyst-perl bowtie2 libcatalyst-perl libcatalyst-view-mason-perl libcatalyst-action-rest-perl libplack-perl emacs 
+RUN apt-get install -y less procps host lynx ncbi-blast+ ncbi-blast+-legacy cpanminus bioperl bioperl-run libcatalyst-perl bowtie2 libcatalyst-perl libcatalyst-view-mason-perl libcatalyst-action-rest-perl libplack-perl emacs locate ack
 
 RUN cpanm --force Bio::BLAST::Database Plack::Handler::Starman Catalyst::Restarter Catalyst::View::HTML::Mason
 
