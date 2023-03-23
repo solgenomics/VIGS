@@ -7,5 +7,8 @@ services:
       - type: bind
         source: $HOME/vigs_sequence_files
         target: /home/vigs_sequence_files
+      - type: bind
+        source: /home/production/nicotianabase/vigs_mason/header.mas
+        target: /home/VIGS/mason/vigs_web/header.mas
     container_name: vigs_tool
     image: breedbase/vigs_tool:v0.01
