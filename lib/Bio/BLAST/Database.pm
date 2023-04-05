@@ -361,7 +361,8 @@ sub files_are_complete {
   #assemble list of necessary extensions
   my @necessary_extensions = (qw/sq hr in/, #base database files
 			      #add seqid indexes if called for
-			      $self->indexed_seqs ? qw/sd si/ : (),
+			      #$self->indexed_seqs ? qw/sd si/ : (),
+			      $self->indexed_seqs ? qw/og os/ : (),
 			     );
 
   #add protein/nucleotide prefix to extensions
@@ -438,7 +439,7 @@ sub get_sequence {
         unless $self->files_are_complete;
 
     croak "cannot call get_sequence on a database that has not been indexed for retrieval!"
-        unless $self->indexed_seqs;
+        unless 1; #$self->indexed_seqs;
 
     return Bio::BLAST::Database::Seq->new(
         -bdb => $self,
@@ -479,7 +480,7 @@ sub _read_fastacmd_info {
 
 
     my $indexed = (any {/sd$/} @files) && (any {/si$/} @files);
-
+#    my $indexed = 1; # 
     ### set our data
     $self->type( $self->_guess_type )
         or confess 'could not determine db type';
