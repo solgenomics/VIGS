@@ -489,7 +489,7 @@ sub _read_blastdbcmd_info {
 
     print STDERR "FILES = ".Dumper(\@files);
 
-    my $indexed = (any {/tf$/} @files) && (any {/to$/} @files);
+    my $indexed = 1; # assume files are indexed? (any {/tf$/} @files) && (any {/to$/} @files);
 
     ### set our data
     $self->type( $self->_guess_type )
