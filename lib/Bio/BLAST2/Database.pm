@@ -371,7 +371,7 @@ sub files_are_complete {
   #assemble list of necessary extensions
   my @necessary_extensions = (qw/sq hr in/, #base database files
 			      #add seqid indexes if called for
-			      $self->indexed_seqs ? qw/tf to/ : (),
+			      #$self->indexed_seqs ? qw/tf to/ : (),
 			     );
 
   #add protein/nucleotide prefix to extensions
