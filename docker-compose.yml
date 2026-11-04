@@ -1,14 +1,18 @@
 
 services:
   vigs_tool:
+    restart: unless-stopped
     ports:
-      - 8088:8088
+      - 8941:8088
     volumes:
       - type: bind
-        source: $HOME/vigs_sequence_files
+        source: /export/prod/blast/databases/current/vigs
         target: /home/vigs_sequence_files
+#      - type: bind
+#        source: /home/production/nicotianabase/vigs_mason/header.mas
+#        target: /home/VIGS/mason/vigs_web/header.mas
       - type: bind
-        source: /home/production/nicotianabase/vigs_mason/header.mas
-        target: /home/VIGS/mason/vigs_web/header.mas
-    container_name: vigs_tool
-    image: breedbase/vigs_tool:v0.01
+        source: /home/production/bash_history
+        target: /home/VIGS/.bash_history
+    container_name: vigs_solgenomics
+    image: breedbase/vigs_tool:v0.08
